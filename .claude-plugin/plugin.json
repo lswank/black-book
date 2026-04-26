@@ -1,6 +1,6 @@
 {
   "name": "black-book",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "86 business AI specialists across 9 domains, 9 prompt-engineering frameworks, an on-demand prompt generator, and a meta-specialist for designing new specialists. For Claude Code (full plugin) or Claude Desktop (via the hosted MCP server). Clean-room reimplementation of the Black Book concept.",
   "author": {
     "name": "Lorenzo Swank",
