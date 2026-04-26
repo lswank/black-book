@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Black Book — marketing AI specialists for Claude Code</title>
+<meta name="description" content="A Claude Code plugin: 15 marketing AI specialists, 9 prompt-engineering frameworks, and an on-demand prompt generator. Free and open source." />
+<meta property="og:title" content="Black Book" />
+<meta property="og:description" content="Marketing AI specialists, prompt frameworks, and an on-demand prompt generator for Claude Code." />
+<meta property="og:url" content="https://lswank.github.io/black-book/" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0b0c10;
+    --bg-elev: #14161d;
+    --bg-card: #181a23;
+    --border: #262a36;
+    --border-soft: #1d212c;
+    --text: #e7e9ee;
+    --text-dim: #9aa0ad;
+    --text-faint: #6b7280;
+    --accent: #ffd166;
+    --accent-2: #ef476f;
+    --accent-3: #06d6a0;
+    --accent-4: #118ab2;
+    --tag-1: #2c1a2c;
+    --tag-2: #1a2330;
+    --tag-3: #2a2614;
+    --tag-4: #2c1818;
+    --tag-5: #182d1f;
+    --tag-6: #2d2814;
+    --tag-7: #1c2a2d;
+    --tag-8: #261b2d;
+    --tag-9: #2d1b1b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  code, pre, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; }
+
+  /* Header */
+  header.site {
+    border-bottom: 1px solid var(--border-soft);
+    background: rgba(11,12,16,0.85);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 10;
+  }
+  header.site .container {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .logo { font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
+  .logo .dot { color: var(--accent); }
+  nav a {
+    color: var(--text-dim); text-decoration: none; margin-left: 24px;
+    font-size: 0.9rem; transition: color .15s;
+  }
+  nav a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .eyebrow {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+    line-height: 1.05; letter-spacing: -0.025em;
+    margin: 0 0 20px; font-weight: 700;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede {
+    font-size: 1.15rem; color: var(--text-dim);
+    max-width: 640px; margin: 0 0 36px;
+  }
+
+  /* Install block */
+  .install {
+    display: flex; align-items: stretch; gap: 8px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px;
+    max-width: 580px;
+    overflow: hidden;
+  }
+  .install code {
+    flex: 1; padding: 12px 14px;
+    color: var(--text); font-size: 0.92rem;
+    background: transparent; user-select: all;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .install button {
+    background: var(--accent); color: #1a1408;
+    border: 0; padding: 10px 16px; border-radius: 7px;
+    font-family: inherit; font-weight: 600; font-size: 0.85rem;
+    cursor: pointer; transition: background .15s;
+  }
+  .install button:hover { background: #ffe09a; }
+  .install button.copied { background: var(--accent-3); color: #042b1f; }
+  .install-hint { font-size: 0.85rem; color: var(--text-faint); margin-top: 12px; }
+  .install-hint a { color: var(--text-dim); }
+
+  /* Section */
+  section.block { padding: 72px 0; border-top: 1px solid var(--border-soft); }
+  section.block h2 {
+    font-size: 2rem; letter-spacing: -0.02em; margin: 0 0 8px;
+    font-weight: 700;
+  }
+  section.block .section-lede {
+    color: var(--text-dim); max-width: 640px; margin: 0 0 40px;
+  }
+  .section-counter {
+    color: var(--text-faint); font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+
+  /* Framework grid */
+  .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .fw {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fw::before {
+    content: "";
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--fw-accent, var(--accent));
+  }
+  .fw .fw-letters {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.4rem; font-weight: 600;
+    letter-spacing: 0.08em;
+    margin: 0 0 4px; color: var(--text);
+  }
+  .fw .fw-cmd {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--text-dim); font-size: 0.82rem;
+    margin: 0 0 14px;
+  }
+  .fw .fw-words { font-size: 0.92rem; color: var(--text); margin: 0 0 14px; }
+  .fw .fw-words b { color: var(--fw-accent, var(--accent)); }
+  .fw .fw-best { color: var(--text-dim); font-size: 0.85rem; margin: 0; }
+  .fw[data-fw="tag"]  { --fw-accent: #b66dba; background: linear-gradient(140deg, var(--bg-card), var(--tag-8)); }
+  .fw[data-fw="bab"]  { --fw-accent: #4d96e2; background: linear-gradient(140deg, var(--bg-card), var(--tag-2)); }
+  .fw[data-fw="rtf"]  { --fw-accent: #d4b04d; background: linear-gradient(140deg, var(--bg-card), var(--tag-3)); }
+  .fw[data-fw="care"] { --fw-accent: #e25d5d; background: linear-gradient(140deg, var(--bg-card), var(--tag-4)); }
+  .fw[data-fw="rise"] { --fw-accent: #5dc78c; background: linear-gradient(140deg, var(--bg-card), var(--tag-5)); }
+  .fw[data-fw="aim"]  { --fw-accent: #d4b04d; background: linear-gradient(140deg, var(--bg-card), var(--tag-6)); }
+  .fw[data-fw="gro"]  { --fw-accent: #4ec3c9; background: linear-gradient(140deg, var(--bg-card), var(--tag-7)); }
+  .fw[data-fw="fit"]  { --fw-accent: #b66dba; background: linear-gradient(140deg, var(--bg-card), var(--tag-1)); }
+  .fw[data-fw="led"]  { --fw-accent: #e25d5d; background: linear-gradient(140deg, var(--bg-card), var(--tag-9)); }
+
+  /* Specialists table */
+  .specialists {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .specialists h3 {
+    margin: 0; padding: 18px 22px;
+    font-size: 1.02rem; font-weight: 600;
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-card);
+  }
+  .specialists h3 .pill {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem; padding: 2px 8px;
+    border-radius: 999px; margin-left: 10px;
+    background: var(--bg); color: var(--text-dim);
+    border: 1px solid var(--border); font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+  .spec-list { list-style: none; margin: 0; padding: 0; }
+  .spec-list li {
+    display: grid;
+    grid-template-columns: 220px 88px 1fr;
+    gap: 16px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: baseline;
+  }
+  .spec-list li:last-child { border-bottom: 0; }
+  .spec-list .name {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--text); font-size: 0.9rem;
+  }
+  .spec-list .fw-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem; letter-spacing: 0.08em;
+    color: var(--accent); padding: 2px 8px;
+    border: 1px solid var(--border); border-radius: 999px;
+    text-align: center; justify-self: start;
+  }
+  .spec-list .desc { color: var(--text-dim); font-size: 0.92rem; }
+  @media (max-width: 720px) {
+    .spec-list li { grid-template-columns: 1fr; gap: 6px; }
+    .spec-list .fw-tag { justify-self: start; }
+  }
+
+  /* Roadmap */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .roadmap-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .roadmap-card h4 { margin: 0 0 6px; font-size: 0.95rem; }
+  .roadmap-card p { color: var(--text-dim); font-size: 0.88rem; margin: 0; }
+  .roadmap-card.shipped { border-color: var(--accent-3); }
+  .roadmap-card.shipped h4::after {
+    content: "shipped"; margin-left: 8px;
+    font-size: 0.7rem; padding: 2px 8px; border-radius: 999px;
+    background: rgba(6,214,160,0.12); color: var(--accent-3);
+    font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1px solid rgba(6,214,160,0.3);
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 0 60px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-faint); font-size: 0.86rem;
+  }
+  footer a { color: var(--text-dim); }
+  footer .container {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: space-between; align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="logo">Black Book<span class="dot">.</span></div>
+    <nav>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#specialists">Specialists</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="https://github.com/lswank/black-book">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Claude Code plugin</span>
+    <h1>Marketing AI specialists, <em>without the prompt-bank cosplay</em>.</h1>
+    <p class="lede">Fifteen role-built marketing specialists, the nine prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand. Free, open source, and installable in one command.</p>
+
+    <div class="install">
+      <code id="install-cmd">/plugin install https://github.com/lswank/black-book</code>
+      <button id="install-copy" type="button">Copy</button>
+    </div>
+    <p class="install-hint">Or clone into <code>~/.claude/plugins/</code>. <a href="https://github.com/lswank/black-book#install">Install instructions →</a></p>
+  </div>
+</section>
+
+<section class="block" id="frameworks">
+  <div class="container">
+    <p class="section-counter">9 frameworks</p>
+    <h2>Pick a shape, get a prompt.</h2>
+    <p class="section-lede">Each framework is a slash command. Pipe in what you want; get back a structured, copy-pastable prompt with the missing inputs surfaced.</p>
+
+    <div class="framework-grid">
+      <div class="fw" data-fw="tag">
+        <p class="fw-letters">T · A · G</p>
+        <p class="fw-cmd">/tag</p>
+        <p class="fw-words"><b>Task</b> · <b>Action</b> · <b>Goal</b></p>
+        <p class="fw-best">Quick ad-hoc requests where you know what you want done.</p>
+      </div>
+      <div class="fw" data-fw="bab">
+        <p class="fw-letters">B · A · B</p>
+        <p class="fw-cmd">/bab</p>
+        <p class="fw-words"><b>Before</b> · <b>After</b> · <b>Bridge</b></p>
+        <p class="fw-best">Cold outreach, problem/solution copy, turnaround narratives.</p>
+      </div>
+      <div class="fw" data-fw="rtf">
+        <p class="fw-letters">R · T · F</p>
+        <p class="fw-cmd">/rtf</p>
+        <p class="fw-words"><b>Role</b> · <b>Task</b> · <b>Format</b></p>
+        <p class="fw-best">Short, structured outputs — ad copy, headlines, social posts.</p>
+      </div>
+      <div class="fw" data-fw="care">
+        <p class="fw-letters">C · A · R · E</p>
+        <p class="fw-cmd">/care</p>
+        <p class="fw-words"><b>Context</b> · <b>Action</b> · <b>Result</b> · <b>Example</b></p>
+        <p class="fw-best">Grounded work — landing pages, longer content with brand voice.</p>
+      </div>
+      <div class="fw" data-fw="rise">
+        <p class="fw-letters">R · I · S · E</p>
+        <p class="fw-cmd">/rise</p>
+        <p class="fw-words"><b>Role</b> · <b>Input</b> · <b>Steps</b> · <b>Expectation</b></p>
+        <p class="fw-best">Multi-step long outputs — full posts, scripts, sequences.</p>
+      </div>
+      <div class="fw" data-fw="aim">
+        <p class="fw-letters">A · I · M</p>
+        <p class="fw-cmd">/aim</p>
+        <p class="fw-words"><b>Action</b> · <b>Intent</b> · <b>Metric</b></p>
+        <p class="fw-best">Strategy — channels, OKRs, growth loops, market entry.</p>
+      </div>
+      <div class="fw" data-fw="gro">
+        <p class="fw-letters">G · R · O</p>
+        <p class="fw-cmd">/gro</p>
+        <p class="fw-words"><b>Goal</b> · <b>Reason</b> · <b>Output</b></p>
+        <p class="fw-best">Lightweight planning — newsletters, calendars, briefs.</p>
+      </div>
+      <div class="fw" data-fw="fit">
+        <p class="fw-letters">F · I · T</p>
+        <p class="fw-cmd">/fit</p>
+        <p class="fw-words"><b>Format</b> · <b>Input</b> · <b>Task</b></p>
+        <p class="fw-best">Transforms — press releases, meta tags, summaries.</p>
+      </div>
+      <div class="fw" data-fw="led">
+        <p class="fw-letters">L · E · D</p>
+        <p class="fw-cmd">/led</p>
+        <p class="fw-words"><b>Level</b> · <b>Expectation</b> · <b>Direction</b></p>
+        <p class="fw-best">Calibration — when the same content could be written ten ways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="prompt-bank">
+  <div class="container">
+    <p class="section-counter">on demand</p>
+    <h2>The prompt bank that doesn't go stale.</h2>
+    <p class="section-lede">Static prompt libraries are a 2023 artifact — Claude already produces tailored prompts better than a 1,000-prompt PDF.</p>
+
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; max-width: 740px;">
+      <p class="mono" style="color: var(--accent); margin: 0 0 12px; font-size: 0.92rem;">/prompt-bank linkedin post launching v2 of our SOC 2 product</p>
+      <p style="margin: 0; color: var(--text-dim); font-size: 0.95rem;">→ Picks <code>social-post-writer</code>, applies <code>R-T-F</code>, asks for the missing audience and CTA, then emits the finished prompt and offers to run it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="specialists">
+  <div class="container">
+    <p class="section-counter">15 specialists · v1 marketing</p>
+    <h2>Specialists, not personas.</h2>
+    <p class="section-lede">Two shapes: <code>subagents</code> that produce artifacts, and <code>skills</code> that load a thinking-partner persona into your current chat. Each declares which framework it's built on.</p>
+
+    <div class="specialists">
+      <h3>Subagents <span class="pill">artifact producers</span></h3>
+      <ul class="spec-list">
+        <li><span class="name">sales-email-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Sales emails, sequences, follow-ups, re-engagement.</span></li>
+        <li><span class="name">cold-outreach-copywriter</span><span class="fw-tag">B·A·B</span><span class="desc">First-touch cold email and LinkedIn DMs.</span></li>
+        <li><span class="name">landing-page-copywriter</span><span class="fw-tag">C·A·R·E</span><span class="desc">Full landing pages or specific sections.</span></li>
+        <li><span class="name">ad-copywriter</span><span class="fw-tag">R·T·F</span><span class="desc">Paid ads — Meta, Google, LinkedIn, X, TikTok.</span></li>
+        <li><span class="name">blog-post-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Long-form posts — guides, opinion, comparisons, listicles.</span></li>
+        <li><span class="name">newsletter-writer</span><span class="fw-tag">G·R·O</span><span class="desc">Newsletter editions with subject lines and structure.</span></li>
+        <li><span class="name">social-post-writer</span><span class="fw-tag">R·T·F</span><span class="desc">Organic social — LinkedIn, X, Instagram, Threads.</span></li>
+        <li><span class="name">video-script-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">YouTube, shorts, sales videos, AI-video prompts.</span></li>
+        <li><span class="name">press-release-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Press releases plus journalist pitch emails.</span></li>
+        <li><span class="name">seo-meta-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Title tags, meta descriptions, OG, schema.</span></li>
+      </ul>
+    </div>
+
+    <div class="specialists">
+      <h3>Skills <span class="pill">consultative thinking</span></h3>
+      <ul class="spec-list">
+        <li><span class="name">cmo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Strategic marketing decisions — channel mix, brand, OKRs.</span></li>
+        <li><span class="name">growth-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Growth loops, funnels, north-star metrics, experiments.</span></li>
+        <li><span class="name">positioning-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Positioning, messaging, ICP, category, differentiation.</span></li>
+        <li><span class="name">content-strategist</span><span class="fw-tag">G·R·O</span><span class="desc">Calendars, pillars, distribution, repurposing chains.</span></li>
+        <li><span class="name">competitive-analyst</span><span class="fw-tag">C·A·R·E</span><span class="desc">Teardowns, audits, market mapping, win/loss synthesis.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="roadmap">
+  <div class="container">
+    <p class="section-counter">roadmap</p>
+    <h2>Marketing first. The rest when v1 holds.</h2>
+    <p class="section-lede">Each domain ships when v1 has held up under actual use. We're not chasing a count.</p>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-card shipped">
+        <h4>Marketing</h4>
+        <p>10 artifact specialists, 5 strategy partners, all 9 frameworks.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>Sales</h4>
+        <p>Discovery scripts, demo decks, objection-handling, win/loss notes.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>Leadership</h4>
+        <p>Vision memos, all-hands talking points, exec comms.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>HR / People</h4>
+        <p>Job descriptions, interview kits, perf-review templates.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>Finance</h4>
+        <p>Board memos, runway models, investor updates.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>Strategy / Ops</h4>
+        <p>OKRs, postmortems, decision memos.</p>
+      </div>
+      <div class="roadmap-card">
+        <h4>Content / Creative</h4>
+        <p>Book outlines, course curricula, speaker bios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>MIT licensed · open source on <a href="https://github.com/lswank/black-book">GitHub</a></span>
+    <span>Built by <a href="https://github.com/lswank">@lswank</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById("install-copy");
+    var cmd = document.getElementById("install-cmd");
+    if (!btn || !cmd || !navigator.clipboard) return;
+    btn.addEventListener("click", function(){
+      navigator.clipboard.writeText(cmd.textContent.trim()).then(function(){
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        setTimeout(function(){
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 1600);
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

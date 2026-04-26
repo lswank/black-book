@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-26T04:45:59.660Z",
+  "count": 15,
+  "domains": [
+    "marketing"
+  ],
+  "frameworks": [
+    "A-I-M",
+    "B-A-B",
+    "C-A-R-E",
+    "F-I-T",
+    "G-R-O",
+    "R-I-S-E",
+    "R-T-F",
+    "T-A-G"
+  ],
+  "entries": [
+    {
+      "name": "ad-copywriter",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "R-T-F",
+      "description": "Use for paid ad copy — Meta (Facebook/Instagram), Google Ads (search and display), LinkedIn, X, TikTok, YouTube ads. Produces multiple variants per ad set, not creative direction.",
+      "path": "agents/ad-copywriter.md"
+    },
+    {
+      "name": "blog-post-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "R-I-S-E",
+      "description": "Use for long-form blog posts — guides, tutorials, opinion pieces, comparison posts, listicles, case studies. Produces full drafts with H2/H3 structure. Use seo-meta-writer separately for meta tags.",
+      "path": "agents/blog-post-writer.md"
+    },
+    {
+      "name": "cmo-advisor",
+      "kind": "skill",
+      "domain": "marketing",
+      "framework": "A-I-M",
+      "description": "Use when the user wants to think through a marketing strategy decision — channel mix, brand positioning, org structure, marketing OKRs, budget allocation, fractional-CMO-style strategic questions. Not for producing artifacts (use the artifact specialists for that).",
+      "path": "skills/cmo-advisor.md"
+    },
+    {
+      "name": "cold-outreach-copywriter",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "B-A-B",
+      "description": "Use for cold outreach — cold email prospecting, cold LinkedIn DMs, partnership intros, link-building emails. For first-touch only; use sales-email-writer for follow-ups inside an existing sequence.",
+      "path": "agents/cold-outreach-copywriter.md"
+    },
+    {
+      "name": "competitive-analyst",
+      "kind": "skill",
+      "domain": "marketing",
+      "framework": "C-A-R-E",
+      "description": "Use for competitive research and analysis — competitor teardowns, feature comparisons, pricing-page audits, messaging audits, market-map building, win/loss synthesis. Produces analysis, not artifacts.",
+      "path": "skills/competitive-analyst.md"
+    },
+    {
+      "name": "content-strategist",
+      "kind": "skill",
+      "domain": "marketing",
+      "framework": "G-R-O",
+      "description": "Use when the user wants to plan content — content calendars, pillar/cluster strategies, distribution plans, repurposing playbooks, editorial themes, brand voice guidelines. Strategic, not artifact-producing.",
+      "path": "skills/content-strategist.md"
+    },
+    {
+      "name": "growth-strategist",
+      "kind": "skill",
+      "domain": "marketing",
+      "framework": "A-I-M",
+      "description": "Use when the user wants to design or audit a growth strategy — funnels, channels, growth loops, activation/retention/referral mechanics, north-star metrics, growth experiments. Strategic, not artifact-producing.",
+      "path": "skills/growth-strategist.md"
+    },
+    {
+      "name": "landing-page-copywriter",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "C-A-R-E",
+      "description": "Use for landing page copy — full pages or specific sections (hero, features, social proof, FAQ, pricing, footer CTA). Produces copy with section structure, not visual design.",
+      "path": "agents/landing-page-copywriter.md"
+    },
+    {
+      "name": "newsletter-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "G-R-O",
+      "description": "Use for newsletter editions — weekly roundups, founder updates, lifecycle newsletters, customer-facing product updates. Produces full editions, not subscription-funnel copy.",
+      "path": "agents/newsletter-writer.md"
+    },
+    {
+      "name": "positioning-coach",
+      "kind": "skill",
+      "domain": "marketing",
+      "framework": "T-A-G",
+      "description": "Use when the user wants to nail positioning, messaging, ICP, value props, category, or competitive differentiation. Often the upstream problem when content \"isn't landing.\" Strategic, not artifact-producing.",
+      "path": "skills/positioning-coach.md"
+    },
+    {
+      "name": "press-release-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "F-I-T",
+      "description": "Use for press releases — funding announcements, product launches, partnerships, hires, milestones. Produces a wire-ready release plus a journalist-friendly pitch email. Not for blog announcements (use blog-post-writer).",
+      "path": "agents/press-release-writer.md"
+    },
+    {
+      "name": "sales-email-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "R-I-S-E",
+      "description": "Use when the user needs a sales email, sales-email sequence, follow-up email, re-engagement email, or upsell/cross-sell email. Produces ready-to-send copy, not strategy.",
+      "path": "agents/sales-email-writer.md"
+    },
+    {
+      "name": "seo-meta-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "F-I-T",
+      "description": "Use for SEO and social meta — title tags, meta descriptions, H1, OG/Twitter cards, schema-markup snippets, and slug suggestions. Use after content is drafted, not before.",
+      "path": "agents/seo-meta-writer.md"
+    },
+    {
+      "name": "social-post-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "R-T-F",
+      "description": "Use for organic social posts — LinkedIn, X/Twitter, Instagram captions, Threads, Bluesky. Produces platform-tuned posts, not paid-ad copy (use ad-copywriter for paid).",
+      "path": "agents/social-post-writer.md"
+    },
+    {
+      "name": "video-script-writer",
+      "kind": "subagent",
+      "domain": "marketing",
+      "framework": "R-I-S-E",
+      "description": "Use for video scripts — YouTube long-form, YouTube Shorts, TikTok, Instagram Reels, sales videos, explainer videos, AI-generated video prompts (Sora, Veo, Runway). Produces a script with shot-level direction.",
+      "path": "agents/video-script-writer.md"
+    }
+  ]
+}
