@@ -282,6 +282,16 @@
     display: block;
     margin-bottom: 6px;
   }
+  .example-outcome {
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
 
   /* --- Install --- */
   .install-card {
@@ -353,52 +363,6 @@
     font-size: 0.95rem;
   }
   .install-footnote a { color: var(--text-dim); }
-
-  /* --- Areas grid --- */
-  .areas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-  }
-  .area-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-soft);
-    border-radius: 14px;
-    padding: 24px 26px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform .15s, box-shadow .15s, border-color .15s;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: var(--shadow-card);
-  }
-  .area-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card-hover);
-    border-color: var(--accent);
-  }
-  .area-name {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--text);
-  }
-  .area-count {
-    color: var(--accent-2);
-    font-weight: 600;
-    font-size: 1rem;
-    background: var(--accent-soft);
-    padding: 2px 10px;
-    border-radius: 999px;
-  }
-  .area-desc {
-    color: var(--text-dim);
-    font-size: 1rem;
-    line-height: 1.5;
-  }
 
   /* --- Helpers list (collapsible) --- */
   details.helpers-detail {
@@ -513,42 +477,6 @@
   .search-row input:focus { outline: none; border-color: var(--accent); }
   .search-row input::placeholder { color: var(--text-faint); }
   .search-count { color: var(--text-dim); font-size: 0.95rem; }
-
-  /* --- How it works --- */
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  .how-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-soft);
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: var(--shadow-card);
-  }
-  .how-card-num {
-    width: 48px; height: 48px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent-2);
-    font-weight: 700; font-size: 1.4rem;
-    display: inline-flex;
-    align-items: center; justify-content: center;
-    margin-bottom: 20px;
-    font-family: "Instrument Serif", serif;
-  }
-  .how-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin: 0 0 10px;
-  }
-  .how-card p {
-    color: var(--text-2);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin: 0;
-  }
 
   /* --- FAQ --- */
   .faq {
@@ -703,14 +631,14 @@
       Make Claude better at your <span class="accent">job</span>.
     </h1>
     <p class="hero-lede">
-      Eighty-six expert helpers for the things you actually do at work — writing emails, running meetings, planning launches, getting through hard conversations. Free. One click to add them to Claude.
+      Eighty-six experts who know which question to ask you next — for the email you've been dreading, the meeting you have to lead, the call you've been circling. One click. Free.
     </p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://black-book-host.vercel.app/black-book.mcpb" download>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Add Black Book to Claude
       </a>
-      <p class="hero-meta">Works on Mac and Windows · Takes 30 seconds · Free</p>
+      <p class="hero-meta">Mac &amp; Windows · 30 seconds · No account, no keys, no setup</p>
     </div>
   </div>
 </section>
@@ -721,10 +649,10 @@
       <p class="section-eyebrow">What it is</p>
       <h2 class="section-title center">A drawer of <span class="accent">smart helpers</span> Claude can pull from.</h2>
       <p class="section-lede center">
-        You already use Claude as your assistant. Black Book gives Claude eighty-six specific experts to call on — for whatever you happen to be working on right now.
+        You already talk to Claude. Black Book gives Claude eighty-six experts to call on — one for sales emails, one for the all-hands, one for the hiring decision. You don't pick which one. Claude does, silently, based on what you're asking. You just keep talking like always.
       </p>
       <p class="section-lede center" style="font-size: 1.05rem; color: var(--text-dim); margin-bottom: 0;">
-        Think of it like this: instead of one general-purpose Claude, you've got Claude <em>plus</em> a hand-built advisor for marketing, sales, hiring, finance, leadership, and a dozen other areas. Claude figures out which one to use. You just keep talking like you always do.
+        A drawer of helpers. Claude reaches in.
       </p>
     </div>
   </div>
@@ -740,33 +668,36 @@
       <div class="example">
         <div class="example-head">
           <h3>The email you've been putting off</h3>
-          <p>The kind where you need to be firm but not rude, and you've been staring at the blank reply for two days.</p>
+          <p>The one where you need to be firm without being rude. You've been staring at the blank reply for two days.</p>
         </div>
         <div class="example-body">
-          <p class="example-quote">"Help me write a kind but firm email to a vendor who's missed three deadlines and keeps making excuses."</p>
-          <p class="example-result">Black Book pulls in the cold-outreach &amp; sales-email helper. Claude asks what your last conversation looked like and what outcome you actually want — then writes the email. Three subject-line options, the body, and a kindly-worded close. You read it, tweak a sentence, send.</p>
+          <p class="example-quote"><em>"Help me write a kind but firm email to a vendor who's missed three deadlines and keeps making excuses."</em></p>
+          <p class="example-result">Black Book pulls in the cold-outreach helper. It asks what your last exchange looked like and what outcome you actually want — then writes the email. Three subject lines. The body. A kindly-worded close. You tweak a sentence. You send.</p>
+          <p class="example-outcome">Two days of dread → five minutes of work.</p>
         </div>
       </div>
 
       <div class="example">
         <div class="example-head">
-          <h3>A meeting you have to lead</h3>
-          <p>You're presenting to your team after a rough quarter. You want to be honest without making everyone feel like the sky is falling.</p>
+          <h3>The all-hands you have to lead</h3>
+          <p>Rough quarter. Full team in the room tomorrow. You want to be honest without making everyone feel like the sky is falling.</p>
         </div>
         <div class="example-body">
-          <p class="example-quote">"My team had a rough quarter. What should I say at the all-hands tomorrow?"</p>
-          <p class="example-result">Black Book brings in the leadership communications helper. Claude asks what actually happened, who'll be in the room, and what you want them walking out feeling. Then it gives you talking points, a structure, even a few candidate openings. You pick the one that sounds like you.</p>
+          <p class="example-quote"><em>"My team had a rough quarter. What should I say at the all-hands tomorrow?"</em></p>
+          <p class="example-result">Black Book pulls in the leadership-comms helper. It asks what actually happened, who'll be there, and what you want them walking out feeling. Then it gives you structure, talking points, three openings to choose from. You pick the one that sounds like you.</p>
+          <p class="example-outcome">A speech that lands, with five minutes of prep.</p>
         </div>
       </div>
 
       <div class="example">
         <div class="example-head">
-          <h3>A decision you're stuck on</h3>
-          <p>The kind that doesn't have an obvious right answer, and that you've been thinking in circles about for a week.</p>
+          <h3>The decision you've been circling</h3>
+          <p>The one without an obvious right answer. The one you keep rerunning in your head on walks.</p>
         </div>
         <div class="example-body">
-          <p class="example-quote">"Should I hire a fifth person on my team this quarter, or wait?"</p>
-          <p class="example-result">Black Book brings in the team-leadership advisor. Claude asks what work is piling up, what your runway looks like, who you'd hire and why. Then it walks you through the trade-offs — and points out a thing or two you hadn't been thinking about. By the end, the call feels obvious.</p>
+          <p class="example-quote"><em>"Should I hire a fifth person on my team this quarter, or wait?"</em></p>
+          <p class="example-result">Black Book pulls in the team-leadership advisor. It asks what work is piling up, what your runway looks like, who you'd hire and why — then walks you through the trade-offs and points out the thing you hadn't been thinking about.</p>
+          <p class="example-outcome">The call feels obvious. You move on.</p>
         </div>
       </div>
 
@@ -789,10 +720,10 @@
       </div>
 
       <ol class="install-steps">
-        <li>Click the button above. A small file downloads to your computer.</li>
-        <li>Find the file (in your Downloads folder) and double-click it.</li>
-        <li>Claude Desktop pops up and asks <em>"Install Black Book?"</em> — click <strong>Install</strong>.</li>
-        <li>Quit and reopen Claude. Now talk to Claude like you always do.</li>
+        <li>Click the button. A 4 KB file downloads.</li>
+        <li>Find it in your Downloads folder. Double-click.</li>
+        <li>Claude Desktop asks <em>"Install Black Book?"</em> Click <strong>Install</strong>.</li>
+        <li>Reopen Claude. Talk to it like always.</li>
       </ol>
 
       <p class="install-footnote">
@@ -807,47 +738,11 @@
     <p class="section-eyebrow">What's inside</p>
     <h2 class="section-title">Eighty-six helpers, organized into <span class="accent">nine areas</span>.</h2>
     <p class="section-lede">
-      You don't pick the helper — Claude does, based on what you're asking about. But here's everything that's in there.
+      Eighty-six helpers across nine areas: marketing, sales, leadership, people, product &amp; engineering, strategy &amp; ops, finance, customer success, and writing. From cold emails to QBR decks, OKRs to job descriptions, postmortems to proposals.
     </p>
-
-    <div class="areas-grid">
-      <a class="area-card" href="#h-marketing">
-        <div class="area-name">Marketing <span class="area-count">15</span></div>
-        <p class="area-desc">Emails, ads, blog posts, landing pages, press releases, brand strategy.</p>
-      </a>
-      <a class="area-card" href="#h-sales">
-        <div class="area-name">Sales <span class="area-count">12</span></div>
-        <p class="area-desc">Discovery calls, demo decks, proposals, follow-ups, deal coaching.</p>
-      </a>
-      <a class="area-card" href="#h-leadership">
-        <div class="area-name">Leadership <span class="area-count">10</span></div>
-        <p class="area-desc">All-hands talking points, board updates, vision memos, hard conversations.</p>
-      </a>
-      <a class="area-card" href="#h-people">
-        <div class="area-name">People <span class="area-count">10</span></div>
-        <p class="area-desc">Job descriptions, interviews, performance reviews, hiring decisions.</p>
-      </a>
-      <a class="area-card" href="#h-product">
-        <div class="area-name">Product &amp; Engineering <span class="area-count">9</span></div>
-        <p class="area-desc">Specs, release notes, planning, technical decisions, prioritization.</p>
-      </a>
-      <a class="area-card" href="#h-strategy">
-        <div class="area-name">Strategy &amp; Operations <span class="area-count">9</span></div>
-        <p class="area-desc">Goals (OKRs), postmortems, decision memos, operating cadence.</p>
-      </a>
-      <a class="area-card" href="#h-finance">
-        <div class="area-name">Finance <span class="area-count">8</span></div>
-        <p class="area-desc">Board updates, budget memos, fundraising narrative, investor letters.</p>
-      </a>
-      <a class="area-card" href="#h-customer-success">
-        <div class="area-name">Customer Success <span class="area-count">7</span></div>
-        <p class="area-desc">QBRs, expansion conversations, save calls, recovery messages.</p>
-      </a>
-      <a class="area-card" href="#h-content-creative">
-        <div class="area-name">Writing &amp; Creative <span class="area-count">6</span></div>
-        <p class="area-desc">Books, courses, podcasts, speaker bios, brand voice.</p>
-      </a>
-    </div>
+    <p class="section-lede" style="font-size: 1.05rem; color: var(--text-dim); margin-bottom: 0;">
+      You don't pick — Claude does, based on what you're asking.
+    </p>
 
     <details class="helpers-detail">
       <summary><span class="helpers-arrow">▸</span> See every helper by name</summary>
@@ -1032,33 +927,6 @@
   </div>
 </section>
 
-<section class="block">
-  <div class="container-narrow">
-    <div style="text-align: center;">
-      <p class="section-eyebrow">How it actually works</p>
-      <h2 class="section-title center">Three things, in <span class="accent">plain English</span>.</h2>
-    </div>
-
-    <div class="how-grid" style="margin-top: 48px;">
-      <div class="how-card">
-        <div class="how-card-num">1</div>
-        <h3>You talk to Claude like always.</h3>
-        <p>You don't have to learn anything new. Just ask Claude what you'd ask a smart friend who happens to know your industry well. "Help me with…", "What should I do about…", "Write me a draft of…"</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">2</div>
-        <h3>Claude reaches into Black Book.</h3>
-        <p>Behind the scenes, Claude looks at what you're asking and picks the right helper from the eighty-six. It loads that helper's expertise. You don't see this happening — it just feels like Claude got smarter at the thing you're working on.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">3</div>
-        <h3>You get a real answer.</h3>
-        <p>Not a generic one. The helpers were hand-built. They know what to ask you to give you a good answer — and what to skip. Most of the time, you go from "I don't know how to start" to "this is good enough to send" in under five minutes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="block tinted" id="faq">
   <div class="container-narrow">
     <div style="text-align: center;">
@@ -1071,53 +939,49 @@
       <details class="faq-item">
         <summary>Is this safe to install?</summary>
         <div class="faq-answer">
-          <p>Yes. Black Book is open source — you can read every line of code on GitHub. The file you download is a small Claude Desktop extension (about four kilobytes). It just teaches Claude where to find the eighty-six helpers when you ask for help.</p>
-          <p>Your conversations with Claude stay between you and Claude. Black Book doesn't see what you're asking about; it just provides the helpers themselves.</p>
+          <p>Yes. Open source — read every line on GitHub. The downloaded file is about 4 KB; it just tells Claude where to find the eighty-six helpers. Your conversations stay between you and Claude.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>Does it cost money?</summary>
         <div class="faq-answer">
-          <p>No. It's free, and it'll stay free. There's a soft cap of about thirty questions per hour to keep costs manageable on the free server, which is plenty for normal use.</p>
-          <p>If you somehow hit the cap, you can run Black Book on your own computer and the cap goes away. Most people never need to.</p>
+          <p>No. Free, staying free. Soft cap of about thirty questions per hour on the shared server — plenty for normal use. Hit the cap and you can self-host; cap goes away.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>Do I need to be technical to use it?</summary>
         <div class="faq-answer">
-          <p>Not at all. The whole pitch is: you keep talking to Claude exactly like you always do. Black Book is invisible — you don't have to know it's there.</p>
-          <p>The only technical part is installing it, and that's two clicks: download the file, double-click it.</p>
+          <p>No. You keep talking to Claude like you always do. The install is two clicks.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>What if Claude already knows about, say, marketing?</summary>
         <div class="faq-answer">
-          <p>Claude's general knowledge is great — but it's general. The Black Book helpers are <em>specific</em>. They know what to ask you to give you a useful answer (instead of asking you nothing and giving you something generic).</p>
-          <p>The difference shows up most when you're stuck. A general answer to "help me write a sales email" is fine. A helper that asks "what's the trigger? what's the relationship? what's the one thing you want them to do?" — and then writes the email — is much better.</p>
+          <p>Generally, yes. <em>Generally</em> is the problem. The helpers are <em>specific</em> — they know what to ask you so the answer is actually useful. The difference shows up most when you're stuck.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>What if I install it and don't like it?</summary>
         <div class="faq-answer">
-          <p>Open Claude Desktop's settings, find the Black Book entry, and remove it. Takes about five seconds. Nothing else changes.</p>
+          <p>Open Claude Desktop's settings, find Black Book, click remove. Five seconds. Nothing else changes.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>What about Claude Code (the developer tool)?</summary>
         <div class="faq-answer">
-          <p>If you use Claude Code, there's a richer version that adds slash commands, sub-agents, and full-blown workflows. See the <a href="#developers">developers section</a> at the bottom of this page.</p>
+          <p>There's a richer version with slash commands, sub-agents, and full-blown workflows. See the <a href="#developers">developers section</a> below.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary>Who made this?</summary>
         <div class="faq-answer">
-          <p><a href="https://github.com/lswank">Lorenzo Swank</a> made it. It's MIT licensed, on GitHub, and free to use, fork, and run yourself.</p>
+          <p><a href="https://github.com/lswank">Lorenzo Swank</a> made it. MIT licensed, on GitHub, free to fork and self-host.</p>
         </div>
       </details>
 
@@ -1133,9 +997,27 @@
     </div>
 
     <div class="about-text" style="margin-top: 32px;">
-      <p>Claude is already a remarkable assistant. Most of us just ask it general questions, though, and we get general answers — perfectly good ones, but not <em>great</em>.</p>
-      <p>Black Book is a small library of hand-tuned helpers, each focused on one specific thing people do at work. Together they make Claude noticeably better at office work — without changing anything about how you talk to it.</p>
-      <p>It's free, it's open source, and it'll stay that way.</p>
+      <p>Claude is a remarkable generalist. Most of us, though, aren't generalists at work — we have specific jobs, with specific problems, that have specific right answers.</p>
+      <p>Black Book is a small library of hand-tuned experts for the specific kind. It makes Claude noticeably better at office work without changing how you talk to it.</p>
+      <p>Free. Open source. Staying that way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block tinted" id="final-cta">
+  <div class="container">
+    <div class="install-card reveal">
+      <h2 class="install-title">Try it on one task this week.</h2>
+
+      <div class="install-button-row" style="margin-top: 24px;">
+        <a class="btn btn-primary" href="https://black-book-host.vercel.app/black-book.mcpb" download>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Add Black Book to Claude
+        </a>
+      </div>
+
+      <p class="install-sub" style="margin: 24px 0 14px;">30 seconds · Free forever</p>
+      <p style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.2rem; color: var(--text-2); margin: 0;">If it makes Tuesday afternoon easier, it earned the install.</p>
     </div>
   </div>
 </section>

@@ -6,6 +6,21 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.5.1] — 2026-04-26
+
+### Changed
+
+- **Tightened landing-page copy** following Lorenzo's editorial pass:
+  - Sharper hero subhead and microcopy.
+  - Three scenario blocks rewritten with crisper outcome lines (e.g. "Two days of dread → five minutes of work.").
+  - The 9-card "What's inside" grid replaced with a single confident paragraph; the full helper-by-name list still lives in the existing disclosure below.
+  - Removed the "How it actually works" section — the scenarios cover it.
+  - FAQ answers trimmed.
+  - "Why this exists" sharpened from soft to confident.
+  - New closing CTA section ("Try it on one task this week.") added between the maker note and the developers block.
+- Dead CSS removed (`.areas-grid`, `.area-card`, `.area-name`, `.area-count`, `.area-desc`, `.how-grid`, `.how-card*`).
+- `plugin.json` version → `0.5.1`.
+
 ## [0.5.0] — 2026-04-26
 
 ### Changed
