@@ -6,6 +6,16 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.4.2] — 2026-04-26
+
+### Fixed
+
+- **`.mcpb` bundle crashed on first install in Claude Desktop.** Claude Desktop runs bundle servers in its own bundled Node runtime, which doesn't have `npx` on PATH. The previous bundle stub spawned `npx mcp-remote …` and exited immediately when the spawn failed. Replaced with a pure-Node stdio↔HTTP proxy using the global `fetch` (Node 18+), which has no external command dependencies. Bundle size grew from 2.6 KB to ~4 KB; otherwise no functional change. Re-download `black-book.mcpb` to update.
+
+### Changed
+
+- `plugin.json` version → `0.4.2`. Keeps the OSS plugin version aligned with the bundle's manifest version.
+
 ## [0.4.1] — 2026-04-26
 
 ### Added
