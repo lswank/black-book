@@ -1,10 +1,17 @@
 # Black Book
 
+[![CI](https://github.com/lswank/black-book/actions/workflows/ci.yml/badge.svg)](https://github.com/lswank/black-book/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Specialists](https://img.shields.io/badge/specialists-69-ffd166)](#specialists)
+[![Domains](https://img.shields.io/badge/domains-7-118ab2)](#specialists)
+
 A Claude Code plugin: 69 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
 
 A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
-**Landing page:** https://lswank.github.io/black-book/
+**Landing page:** https://lswank.github.io/black-book/  
+**L-E-D guide:** [`docs/L-E-D.md`](docs/L-E-D.md) — why the calibration framework has no specialist  
+**Contributing:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ---
 
@@ -51,6 +58,18 @@ Static prompt libraries are a 2023 artifact. Instead, `/prompt-bank <task>` does
 5. Offers to hand it off to the right specialist.
 
 Same surface area as a 1,000-prompt bank; infinite coverage; zero stale entries.
+
+### Discovery and orchestration
+
+Three plugin commands for finding and chaining specialists:
+
+| Command       | Use for                                                        |
+| ------------- | -------------------------------------------------------------- |
+| `/list`       | Browse the catalog. Optional filter by domain or framework.    |
+| `/find`       | Describe a task; get one or two specialist recommendations.    |
+| `/flow`       | Run a multi-specialist workflow (launch, hire, fundraise, etc.) |
+
+Pre-built flows include `launch`, `hire`, `board-update`, `enterprise-deal`, `postmortem-loop`, `okr-cycle`, `fundraise`, and `content-engine`. See [`commands/flow.md`](commands/flow.md) for the chains.
 
 ### Specialists
 
@@ -225,7 +244,7 @@ Each specialist declares its preferred framework in frontmatter.
 
 ## Contributing
 
-Specialists are hand-authored markdown files with frontmatter:
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full contributor guide. Quick version:
 
 ```yaml
 ---
@@ -236,14 +255,16 @@ framework: R-I-S-E
 ---
 ```
 
-After editing or adding files in `agents/` or `skills/`:
+Specialists are hand-authored markdown files in `agents/` (subagents) or `skills/` (consultative skills). After editing or adding:
 
 ```bash
-node scripts/build-catalog.mjs
+node scripts/build-catalog.mjs           # regenerate catalog.json
+node scripts/build-catalog.mjs --strict  # validate; non-zero on errors
+node scripts/build-catalog.mjs --check   # CI mode: verify on-disk catalog is up to date
 ```
 
-That regenerates `catalog.json`, which `/prompt-bank` reads to make recommendations.
+CI runs `--check` on every PR (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [`LICENSE`](LICENSE).

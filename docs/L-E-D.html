@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>L-E-D — the calibration framework · Black Book</title>
+<meta name="description" content="L-E-D (Level, Expectation, Direction) is the only framework in Black Book with no specialist. Here's why, and when to reach for it." />
+<meta property="og:title" content="L-E-D — the calibration framework" />
+<meta property="og:description" content="The only Black Book framework without a specialist — and the reason it doesn't need one." />
+<meta property="og:url" content="https://lswank.github.io/black-book/L-E-D.html" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0b0c10;
+    --bg-elev: #14161d;
+    --bg-card: #181a23;
+    --border: #262a36;
+    --border-soft: #1d212c;
+    --text: #e7e9ee;
+    --text-dim: #9aa0ad;
+    --text-faint: #6b7280;
+    --accent: #ffd166;
+    --accent-3: #06d6a0;
+    --led-color: #e25d5d;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  code, pre, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; }
+  code { color: var(--accent); background: rgba(255,209,102,0.07); padding: 1px 6px; border-radius: 4px; font-size: 0.88em; }
+  pre {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 24px 0;
+    line-height: 1.5;
+  }
+  pre code { background: transparent; padding: 0; color: var(--text); font-size: 0.86rem; }
+
+  header.site {
+    border-bottom: 1px solid var(--border-soft);
+    background: rgba(11,12,16,0.85);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 10;
+  }
+  header.site .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  }
+  .logo { font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; color: var(--text); text-decoration: none; }
+  .logo .dot { color: var(--accent); }
+  nav a { color: var(--text-dim); text-decoration: none; margin-left: 24px; font-size: 0.9rem; }
+  nav a:hover { color: var(--text); }
+
+  article { padding: 80px 0 100px; }
+  article .eyebrow {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--led-color);
+    padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  article h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin: 0 0 16px; font-weight: 700;
+  }
+  article .lede {
+    font-size: 1.1rem; color: var(--text-dim);
+    margin: 0 0 56px;
+  }
+  article h2 {
+    margin-top: 56px; margin-bottom: 12px;
+    font-size: 1.4rem; font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  article h3 {
+    margin-top: 32px; margin-bottom: 10px;
+    font-size: 1.1rem; font-weight: 600;
+  }
+  article p { color: var(--text); margin: 0 0 16px; }
+  article ul { padding-left: 22px; color: var(--text); }
+  article li { margin-bottom: 8px; }
+  article strong { color: var(--text); }
+
+  footer {
+    padding: 30px 0 60px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-faint); font-size: 0.86rem;
+    text-align: center;
+  }
+  footer a { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="inner">
+    <a class="logo" href="./">Black Book<span class="dot">.</span></a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./#frameworks">Frameworks</a>
+      <a href="https://github.com/lswank/black-book">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+    <span class="eyebrow">L · E · D · /led</span>
+    <h1>The calibration framework with no specialist.</h1>
+    <p class="lede">L-E-D is the only framework in Black Book that no specialist defaults to. That's deliberate. The other eight structure <em>the work</em>; L-E-D structures <em>how the work feels</em>.</p>
+
+    <h2>What it is</h2>
+    <ul>
+      <li><strong>Level</strong> — Set the complexity level. Beginner / intermediate / expert? Junior PM reading this, or CTO?</li>
+      <li><strong>Expectation</strong> — What does the user want back, concretely? List of three? Two paragraphs? A single decisive recommendation?</li>
+      <li><strong>Direction</strong> — Style, format, tone. Plain and direct? Punchy and irreverent? Formal and grounded? Conversational?</li>
+    </ul>
+
+    <h2>When to reach for it</h2>
+    <p>Most prompts don't need it. The framework on which the specialist is built (<code>R-I-S-E</code>, <code>C-A-R-E</code>, etc.) usually pins the work down enough.</p>
+    <p>Use L-E-D when the answer to "what does good look like?" depends entirely on stylistic choices the user has not made yet:</p>
+    <ul>
+      <li>A blog post on the same topic, for the same audience, could be a 600-word explainer or a 2,500-word deep-dive. → L-E-D forces the call.</li>
+      <li>An exec comms message about a layoff could be sober and apologetic, or steady and direct. → L-E-D forces the call.</li>
+      <li>A technical doc could be written for a junior on-call engineer or for a principal architect. → L-E-D forces the call.</li>
+      <li>A sales email could be polite and professional, or irreverent and punchy. → L-E-D forces the call.</li>
+    </ul>
+
+    <h2>How to layer it</h2>
+
+    <h3>Pattern 1 — L-E-D in front of another framework</h3>
+    <pre><code>**Level:** Mid-career engineer, comfortable with distributed systems, hasn't run a database migration of this scale before.
+**Expectation:** A runbook they could execute in 90 minutes with a buddy.
+**Direction:** Calm, sequential, no breathless "this is critical" language. Tone is "here's how we do it; you've got this."
+
+Now apply R-I-S-E:
+**Role:** ...
+**Input:** ...
+**Steps:** ...
+**Expectation:** ...</code></pre>
+    <p>L-E-D goes first because the calibration shapes everything that follows. A hostile-takeover proposal and a friendly-merger proposal use the same C-A-R-E intake — but L-E-D distinguishes them.</p>
+
+    <h3>Pattern 2 — <code>/led</code> standalone after a framework command</h3>
+    <p>If you ran <code>/rise</code> or <code>/care</code> and the output is technically correct but stylistically wrong, run <code>/led</code> over it as a refinement pass:</p>
+    <pre><code>/led make this read like a Stripe blog post — confident, plain, slight wit, no breathless launch language</code></pre>
+    <p>This is the most common usage pattern. L-E-D is rarely the <em>first</em> call; it's usually the <em>correction</em> call after the substance is right but the temperature is off.</p>
+
+    <h2>What it isn't for</h2>
+    <ul>
+      <li>Don't use L-E-D when the user hasn't decided <em>what</em> they want — they need T-A-G or R-T-F to pin down the task itself first. L-E-D layered on a vague task makes the vagueness feel polished.</li>
+      <li>Don't use it as a wrapper for "make it sound good." That's not calibration; it's begging. Specify what <em>good</em> means.</li>
+      <li>Don't use it for length. "Make it 800 words" belongs in the framework intake, not in L-E-D.</li>
+    </ul>
+
+    <h2>Why it has its own slash command but no specialist</h2>
+    <p>A specialist's framework should pin its intake. If we built a specialist around L-E-D, we'd be saying "this specialist's <em>primary</em> job is to calibrate tone." That's a niche role at best, and in practice it's a layer every specialist already does some of.</p>
+    <p>The slash command — <code>/led</code> — gets to be a focused tool: when you have a draft and the substance is right but the <em>feel</em> is wrong, run <code>/led</code> and get a calibrated rewrite. That's the use case, and it doesn't need a persona.</p>
+  </div>
+</article>
+
+<footer>
+  <a href="./">← Back to the catalog</a>
+</footer>
+
+</body>
+</html>
