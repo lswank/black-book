@@ -2,11 +2,36 @@
 
 The first 5 minutes after install. Skim this once; you're done after that.
 
-## Install
+Two install paths — pick one:
+
+## Path 1 — Claude Desktop (hosted, fastest)
+
+Paste this into `claude_desktop_config.json` (`~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows), then restart Desktop:
+
+```json
+{
+  "mcpServers": {
+    "black-book": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://black-book-host.vercel.app/mcp"]
+    }
+  }
+}
+```
+
+The MCP tools (`list_specialists`, `find_specialist`, `get_specialist`, `prompt_bank`, `flow`, …) are now available. Try:
+
+> "Use the black-book MCP server. Find me a specialist for writing a launch announcement, then load their full prompt."
+
+Free tier: 30 requests / IP / hour. For unlimited use, [self-host](https://github.com/lswank/black-book/blob/main/mcp/README.md).
+
+## Path 2 — Claude Code (full plugin)
 
 ```
 /plugin install https://github.com/lswank/black-book
 ```
+
+You get subagents, skills, slash commands, `/flow`, `/prompt-bank`, `/list`, `/find`, `/doctor`.
 
 If the plugin landed correctly, you should see a slate of new commands prefixed with `/black-book:` (or just `/<command>` if there are no name collisions in your environment).
 

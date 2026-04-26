@@ -6,6 +6,25 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-04-26
+
+### Added
+
+- **Hosted MCP endpoint** at `https://black-book-host.vercel.app/mcp`. Free tier (30 requests / IP / hour). Drop one snippet in `claude_desktop_config.json` and the catalog is live in Claude Desktop with no clone, no `npm install`, no API keys.
+- **HTTP MCP handler** (`mcp/http-handler.mjs`) using `StreamableHTTPServerTransport`. Generic Node-style `(req, res)` handler — works in Vercel Functions, plain Node `http`, or any framework that accepts the IncomingMessage / ServerResponse pair.
+- **Factory** (`mcp/factory.mjs`) — extracted server setup so the same code powers both stdio and HTTP transports. `mcp/server.mjs` and `mcp/http-handler.mjs` are now thin wrappers over the factory.
+- **Landing-page redesign**. New hero with gradient accent, modern typography, animated reveal-on-scroll, install card with three tabs (hosted / self-host / Claude Code), copy-to-clipboard for each snippet, domain quick-jump cards, refreshed framework cards, sticky search row, polished workflow chains. Single self-contained HTML file, no dependencies.
+
+### Changed
+
+- **Rebrand: "white-room" → "clean-room"** across README, FAQ, plugin.json, and project memory.
+- README, FAQ, QUICKSTART, and `mcp/README.md` lead with the hosted install path; self-host and Claude Code are documented as alternatives.
+- `plugin.json` version → `0.4.0`. Description broadened to mention both Claude Code and Claude Desktop install surfaces.
+
+### Operations
+
+- A separate **private deploy package** lives at `~/black-book-host` (not committed to this repo). Wraps the public HTTP handler with per-IP rate limiting, deploys to Vercel as a single function. The public repo stays a clean OSS plugin/library; the operator decides how to host.
+
 ## [0.3.0] — 2026-04-26
 
 ### Added

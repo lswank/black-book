@@ -7,7 +7,7 @@
 
 A Claude Code plugin: 86 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
 
-A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
+A clean-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
 **Landing page:** https://lswank.github.io/black-book/  
 **Quickstart:** [`QUICKSTART.md`](QUICKSTART.md) — first 5 minutes  
@@ -20,28 +20,35 @@ A white-room reimplementation of [the "Black Book" concept](https://black-book.d
 
 ## Install
 
-### Claude Code
+### Claude Desktop — hosted (free)
 
+The fastest path. No clone, no npm install, no API keys. Just paste this into your `claude_desktop_config.json` (`~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows):
+
+```json
+{
+  "mcpServers": {
+    "black-book": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://black-book-host.vercel.app/mcp"]
+    }
+  }
+}
 ```
-/plugin install https://github.com/lswank/black-book
-```
 
-Or clone into your Claude Code plugin directory:
+Restart Claude Desktop. The `black-book` tools (list_specialists, find_specialist, get_specialist, prompt_bank, flow, …) are now available.
 
-```bash
-git clone https://github.com/lswank/black-book ~/.claude/plugins/black-book
-```
+Free tier rate limit: **30 requests per IP per hour**. Self-host (below) for unlimited use.
 
-### Claude Desktop (and other MCP clients)
+### Claude Desktop — self-hosted
 
-There's an MCP server in [`mcp/`](mcp/) that exposes the same catalog as MCP tools — works in Claude Desktop, Cursor, Codex, and anything else that speaks MCP over stdio.
+Run the MCP server locally — unlimited use, fully private:
 
 ```bash
 git clone https://github.com/lswank/black-book ~/code/black-book
 cd ~/code/black-book/mcp && npm install
 ```
 
-Then add to `claude_desktop_config.json`:
+Then in `claude_desktop_config.json`:
 
 ```json
 {
@@ -54,7 +61,25 @@ Then add to `claude_desktop_config.json`:
 }
 ```
 
-Restart Claude Desktop. See [`mcp/README.md`](mcp/README.md) for full details and the available tools.
+Restart Claude Desktop. See [`mcp/README.md`](mcp/README.md) for full details.
+
+### Claude Code
+
+For the full experience — subagents, skills, slash commands, `/flow`, `/prompt-bank`, `/list`, `/find`, `/doctor`:
+
+```
+/plugin install https://github.com/lswank/black-book
+```
+
+Or clone into your Claude Code plugin directory:
+
+```bash
+git clone https://github.com/lswank/black-book ~/.claude/plugins/black-book
+```
+
+### Cursor, Codex, anything else that speaks MCP
+
+Either the hosted endpoint or the self-host pattern works — Black Book is a generic stdio / streamable HTTP MCP server. Point your client at `https://black-book-host.vercel.app/mcp` (HTTP) or `node /path/to/black-book/mcp/server.mjs` (stdio).
 
 ## What's in the box
 

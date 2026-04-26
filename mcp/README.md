@@ -23,7 +23,26 @@ Resource: `black-book://catalog` — the full catalog as JSON.
 
 ## Install for Claude Desktop
 
-### 1. Clone the repo
+Two paths.
+
+### Hosted (free, no setup)
+
+Free public endpoint at `https://black-book-host.vercel.app/mcp`. Paste this into `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "black-book": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://black-book-host.vercel.app/mcp"]
+    }
+  }
+}
+```
+
+Restart Desktop and the tools are available. Free tier: 30 requests / IP / hour. For unlimited use, self-host.
+
+### Self-hosted (unlimited)
 
 ```bash
 git clone https://github.com/lswank/black-book ~/code/black-book
@@ -31,9 +50,7 @@ cd ~/code/black-book/mcp
 npm install
 ```
 
-### 2. Add to Claude Desktop config
-
-Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+Then in `claude_desktop_config.json`:
 
 ```json
 {

@@ -8,7 +8,7 @@ It's not a prompt library. It's not a course. It's a working set of agents and s
 
 ## How is this different from the Darius Lukas "Black Book"?
 
-This is a [white-room reimplementation](https://en.wikipedia.org/wiki/Clean-room_design) of the *concept* — built independently from the public feature list, sharing none of its code or copy. Several differences in shape:
+This is a [clean-room reimplementation](https://en.wikipedia.org/wiki/Clean-room_design) of the *concept* — built independently from the public feature list, sharing none of its code or copy. Several differences in shape:
 
 - **Native to Claude Code.** Subagents, skills, and slash commands. No copy-paste-into-the-chat workflow.
 - **No static prompt library.** Replaced with `/prompt-bank`, which generates a tailored prompt on demand.
@@ -73,22 +73,24 @@ Open an issue with the proposed domain and the first 3 specialists before writin
 
 ## Will this work on Claude Desktop?
 
-Yes — via the MCP server in [`mcp/`](mcp/README.md). Claude Desktop natively supports MCP servers, and the Black Book MCP server exposes the same catalog as tools (`list_specialists`, `get_specialist`, `find_specialist`, `prompt_bank`, `flow`, etc.).
+Yes — two paths.
 
-Add this to your `claude_desktop_config.json`:
+**Hosted (free, fastest)**. Paste this into `claude_desktop_config.json`, restart Desktop, done:
 
 ```json
 {
   "mcpServers": {
     "black-book": {
-      "command": "node",
-      "args": ["/path/to/black-book/mcp/server.mjs"]
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://black-book-host.vercel.app/mcp"]
     }
   }
 }
 ```
 
-Restart Claude Desktop and the tools become available. See [`mcp/README.md`](mcp/README.md) for the full setup.
+Free tier rate limit is 30 requests / IP / hour, which is plenty for normal use.
+
+**Self-hosted (unlimited)**. Clone the repo, `npm install` in `mcp/`, point Desktop at the local script. See [`mcp/README.md`](mcp/README.md) for the full snippet.
 
 The Claude Code plugin (subagents + skills + slash commands) doesn't transplant directly because Desktop has no plugin surface — but the MCP server gets you the same specialists and frameworks via persona-takeover or prompt-emit.
 
