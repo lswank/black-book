@@ -2,10 +2,10 @@
 
 [![CI](https://github.com/lswank/black-book/actions/workflows/ci.yml/badge.svg)](https://github.com/lswank/black-book/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Specialists](https://img.shields.io/badge/specialists-85-ffd166)](#specialists)
+[![Specialists](https://img.shields.io/badge/specialists-86-ffd166)](#specialists)
 [![Domains](https://img.shields.io/badge/domains-9-118ab2)](#specialists)
 
-A Claude Code plugin: 85 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
+A Claude Code plugin: 86 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
 
 A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
@@ -200,7 +200,7 @@ Each specialist declares its preferred framework in frontmatter.
 | `fp-and-a-strategist`       | A-I-M     | Modeling, planning, forecast methodology  |
 | `fundraise-narrative-coach` | B-A-B     | Pitch narrative, why-now, wedge, moat     |
 
-#### Strategy / Ops (8)
+#### Strategy / Ops (9)
 
 **Subagents**
 
@@ -211,6 +211,7 @@ Each specialist declares its preferred framework in frontmatter.
 | `decision-memo-writer`      | G-R-O     | Decision memos / RFCs / six-pagers                    |
 | `operating-cadence-writer`  | R-I-S-E   | Operating-cadence documents                           |
 | `process-doc-writer`        | F-I-T     | Runbooks, playbooks, SOPs                             |
+| `specialist-builder`        | C-A-R-E   | New Black Book specialists in the house style         |
 
 **Skills**
 
@@ -283,8 +284,8 @@ Each specialist declares its preferred framework in frontmatter.
 ## By the numbers
 
 - 9 domains
-- 85 specialists (53 subagents · 32 skills)
-- 9 framework slash commands + `/prompt-bank` + `/list` + `/find` + `/flow`
+- 86 specialists (54 subagents · 32 skills)
+- 9 framework slash commands + `/prompt-bank` + `/list` + `/find` + `/flow` + `/doctor`
 - 8 frameworks actively in use as specialist defaults
 
 ## Contributing
@@ -300,13 +301,23 @@ framework: R-I-S-E
 ---
 ```
 
-Specialists are hand-authored markdown files in `agents/` (subagents) or `skills/` (consultative skills). After editing or adding:
+Specialists are hand-authored markdown files in `agents/` (subagents) or `skills/` (consultative skills). To scaffold a new one:
 
 ```bash
-node scripts/build-catalog.mjs           # regenerate catalog.json
-node scripts/build-catalog.mjs --strict  # validate; non-zero on errors
-node scripts/build-catalog.mjs --check   # CI mode: verify on-disk catalog is up to date
+make new K=subagent D=marketing F=R-I-S-E N=demand-gen-brief-writer
+# or:
+node scripts/new-specialist.mjs subagent marketing R-I-S-E demand-gen-brief-writer
 ```
+
+This drops a starter file with the right frontmatter and house-style body skeleton. Replace every TODO, then:
+
+```bash
+make build           # regenerate catalog.json
+make strict          # validate; non-zero on errors
+make check           # CI mode: verify on-disk catalog is up to date
+```
+
+You can also use the `specialist-builder` subagent to walk through the design conversation before scaffolding the file.
 
 CI runs `--check` on every PR (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 

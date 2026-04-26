@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-04-26T05:22:37.066Z",
-  "count": 85,
+  "generated_at": "2026-04-26T05:30:58.936Z",
+  "count": 86,
   "domains": [
     "content-creative",
     "customer-success",
@@ -655,6 +655,14 @@
       "framework": "F-I-T",
       "description": "Use for speaker bios, panel intros, podcast guest intros, conference profile copy, \"About the author\" blurbs. Produces multiple length variants. Short-form, voice-of-the-introducer.",
       "path": "agents/speaker-bio-writer.md"
+    },
+    {
+      "name": "specialist-builder",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "C-A-R-E",
+      "description": "Use to design a new Black Book specialist — picks the kind (subagent vs skill), picks the right framework, drafts the frontmatter and body in the house style, and outputs a ready-to-PR markdown file. Also covers refining or rewriting existing specialists.",
+      "path": "agents/specialist-builder.md"
     },
     {
       "name": "strategy-coach",

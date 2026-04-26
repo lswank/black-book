@@ -6,6 +6,23 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.2.1] — 2026-04-26
+
+### Added
+
+- `specialist-builder` subagent (strategy-ops, C-A-R-E) — a meta-specialist that walks the user from idea to PR-ready markdown for new Black Book specialists. Brings the catalog to 86.
+- `scripts/new-specialist.mjs` — scaffolds a new specialist file with valid frontmatter and house-style body skeleton. Validates kind / domain / framework / name before writing.
+- `Makefile` with `build`, `check`, `strict`, and `new` targets.
+- `CHANGELOG.md` and `CODE_OF_CONDUCT.md`.
+- `/doctor` command — prints a summary of what's installed.
+- `docs/favicon.svg` for the landing page.
+
+### Changed
+
+- `plugin.json` version → `0.2.1`. Description and keywords broadened to reflect 9-domain coverage.
+- README: added scaffolding-script and `make` target docs; added `specialist-builder` to the Strategy / Ops table; updated counts to 86; added a command-namespacing callout.
+- Landing page: counts and stats refreshed; `specialist-builder` added to the Strategy / Ops section.
+
 ## [0.2.0] — 2026-04-26
 
 ### Added
