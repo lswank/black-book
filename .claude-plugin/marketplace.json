@@ -1,0 +1,36 @@
+{
+  "name": "black-book",
+  "metadata": {
+    "description": "Black Book — 86 business AI specialists across 9 domains, 9 prompt-engineering frameworks, and 13 multi-specialist workflows. Free and open source."
+  },
+  "owner": {
+    "name": "Lorenzo Swank",
+    "url": "https://github.com/lswank"
+  },
+  "plugins": [
+    {
+      "name": "black-book",
+      "description": "86 business AI specialists across 9 domains, 9 prompt-engineering frameworks, an on-demand prompt generator, and a meta-specialist for designing new specialists. Clean-room reimplementation of the Black Book concept.",
+      "category": "productivity",
+      "source": "./",
+      "homepage": "https://lswank.github.io/black-book/",
+      "author": {
+        "name": "Lorenzo Swank",
+        "url": "https://github.com/lswank"
+      },
+      "license": "MIT",
+      "keywords": [
+        "marketing",
+        "sales",
+        "leadership",
+        "hr",
+        "finance",
+        "strategy",
+        "product",
+        "customer-success",
+        "specialists",
+        "prompt-engineering"
+      ]
+    }
+  ]
+}
