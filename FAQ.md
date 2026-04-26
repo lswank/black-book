@@ -73,9 +73,13 @@ Open an issue with the proposed domain and the first 3 specialists before writin
 
 ## Will this work on Claude Desktop?
 
-Yes — two paths.
+Yes — three paths, in order of effort:
 
-**Hosted (free, fastest)**. Paste this into `claude_desktop_config.json`, restart Desktop, done:
+**One click**: [download `black-book.mcpb`](https://black-book-host.vercel.app/black-book.mcpb), double-click it. Claude Desktop's `.mcpb` (MCP Bundle) handler installs it. Restart Desktop, done.
+
+**One terminal command**: `curl -fsSL https://black-book-host.vercel.app/install | bash` on macOS/Linux, or `iwr -useb https://black-book-host.vercel.app/install.ps1 | iex` on Windows. The script patches your `claude_desktop_config.json` in place, preserving any other entries.
+
+**Manual JSON edit**:
 
 ```json
 {
@@ -88,9 +92,7 @@ Yes — two paths.
 }
 ```
 
-Free tier rate limit is 30 requests / IP / hour, which is plenty for normal use.
-
-**Self-hosted (unlimited)**. Clone the repo, `npm install` in `mcp/`, point Desktop at the local script. See [`mcp/README.md`](mcp/README.md) for the full snippet.
+All three paths point at the same hosted endpoint. Free tier: 30 requests / IP / hour. For unlimited use, [self-host](mcp/README.md).
 
 The Claude Code plugin (subagents + skills + slash commands) doesn't transplant directly because Desktop has no plugin surface — but the MCP server gets you the same specialists and frameworks via persona-takeover or prompt-emit.
 

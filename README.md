@@ -20,9 +20,36 @@ A clean-room reimplementation of [the "Black Book" concept](https://black-book.d
 
 ## Install
 
-### Claude Desktop — hosted (free)
+### Claude Desktop — one-click bundle (easiest)
 
-The fastest path. No clone, no npm install, no API keys. Just paste this into your `claude_desktop_config.json` (`~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows):
+1. **[Download `black-book.mcpb`](https://black-book-host.vercel.app/black-book.mcpb)** (~2.6 KB)
+2. Double-click the file
+3. Claude Desktop opens with an install prompt — click **Install**
+4. Done
+
+The bundle proxies stdio MCP traffic to the hosted endpoint. Free tier rate limit: **30 requests per IP per hour**. Self-host (below) for unlimited use.
+
+### Claude Desktop — one-line terminal install
+
+For developers who'd rather use a script. Patches `claude_desktop_config.json` in place, preserving any existing entries:
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://black-book-host.vercel.app/install | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+iwr -useb https://black-book-host.vercel.app/install.ps1 | iex
+```
+
+Restart Claude Desktop after either.
+
+### Claude Desktop — manual JSON
+
+Paste this into `claude_desktop_config.json` (`~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows):
 
 ```json
 {
@@ -36,8 +63,6 @@ The fastest path. No clone, no npm install, no API keys. Just paste this into yo
 ```
 
 Restart Claude Desktop. The `black-book` tools (list_specialists, find_specialist, get_specialist, prompt_bank, flow, …) are now available.
-
-Free tier rate limit: **30 requests per IP per hour**. Self-host (below) for unlimited use.
 
 ### Claude Desktop — self-hosted
 

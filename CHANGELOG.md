@@ -6,6 +6,22 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.4.1] — 2026-04-26
+
+### Added
+
+- **One-click `.mcpb` bundle** at `https://black-book-host.vercel.app/black-book.mcpb` (~2.6 KB). Download, double-click, click Install in Claude Desktop, done. Built against the official MCPB (formerly DXT) manifest spec v0.3.
+- **One-line terminal installer**:
+  - macOS / Linux: `curl -fsSL https://black-book-host.vercel.app/install | bash`
+  - Windows: `iwr -useb https://black-book-host.vercel.app/install.ps1 | iex`
+  Both scripts safely patch `claude_desktop_config.json`, preserving every other entry (with a `.bak` backup) and idempotent on re-run.
+- **Redesigned install card** on the landing page leading with the `.mcpb` download as the primary CTA. JSON-paste / self-host / Claude Code paths now hide behind a "Other ways to install" disclosure.
+
+### Changed
+
+- README, QUICKSTART, and FAQ install sections reordered: one-click bundle first, terminal one-liner second, manual JSON third.
+- `plugin.json` version → `0.4.1`.
+
 ## [0.4.0] — 2026-04-26
 
 ### Added

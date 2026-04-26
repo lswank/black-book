@@ -261,12 +261,66 @@
     font-size: 0.95rem;
     margin: 0 0 24px;
   }
+  .primary-install-row {
+    display: flex; flex-wrap: wrap;
+    align-items: center; gap: 16px;
+    margin: 0 0 28px;
+  }
+  .install-download {
+    font-size: 1.05rem !important;
+    padding: 16px 26px !important;
+    box-shadow: 0 0 0 0 rgba(255, 209, 102, 0.35), 0 12px 32px rgba(255, 138, 91, 0.25);
+  }
+  .install-download:hover {
+    box-shadow: 0 0 0 6px rgba(255, 209, 102, 0.18), 0 14px 36px rgba(255, 138, 91, 0.35);
+  }
+  .install-meta {
+    color: var(--text-faint);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.82rem;
+  }
+
+  .other-installs {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .other-installs > summary {
+    cursor: pointer;
+    list-style: none;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    font-weight: 500;
+    user-select: none;
+    transition: color .15s;
+  }
+  .other-installs > summary:hover { color: var(--text); }
+  .other-installs > summary::-webkit-details-marker { display: none; }
+  .other-installs-arrow {
+    display: inline-block;
+    transition: transform .2s;
+    margin-right: 8px;
+    color: var(--text-faint);
+  }
+  .other-installs[open] .other-installs-arrow { transform: rotate(90deg); }
+  .other-installs-body {
+    margin-top: 24px;
+    display: flex; flex-direction: column;
+    gap: 28px;
+  }
+  .other-install-head {
+    margin-bottom: 12px;
+  }
+  .other-install-head strong { display: block; font-size: 0.96rem; color: var(--text); margin-bottom: 2px; }
+  .other-install-head .other-install-sub { color: var(--text-dim); font-size: 0.85rem; }
+  .other-install-head code { background: rgba(255,255,255,0.04); padding: 1px 6px; border-radius: 4px; font-size: 0.85em; }
+
   .install-tabs {
     display: flex; gap: 4px; padding: 4px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
-    margin: 0 0 16px;
+    margin: 0 0 12px;
     width: fit-content;
   }
   .install-tab {
@@ -753,19 +807,55 @@
   <div class="container">
     <div class="install-card reveal">
       <p class="install-eyebrow">Install</p>
-      <h2 class="install-title">Drop this in your Claude Desktop config.</h2>
-      <p class="install-sub">Edits <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> on macOS, <code>%APPDATA%\Claude\claude_desktop_config.json</code> on Windows. Restart Claude Desktop and you're done.</p>
+      <h2 class="install-title">One click. <span class="accent">Done.</span></h2>
+      <p class="install-sub">Download the bundle, double-click it, restart Claude Desktop. Works on macOS and Windows. No terminal, no JSON.</p>
 
-      <div class="install-tabs" role="tablist">
-        <button class="install-tab active" data-tab="hosted" role="tab">Hosted (free)</button>
-        <button class="install-tab" data-tab="self" role="tab">Self-host</button>
-        <button class="install-tab" data-tab="claude-code" role="tab">Claude Code</button>
+      <div class="primary-install-row">
+        <a class="btn btn-primary install-download" href="https://black-book-host.vercel.app/black-book.mcpb" download>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Black Book
+        </a>
+        <span class="install-meta">black-book.mcpb · 2.6 KB · macOS / Windows</span>
       </div>
 
-      <div class="code-block" data-pane="hosted">
-        <button class="copy" data-copy="hosted">Copy</button>
-<pre id="snippet-hosted"><span class="tok-com">// Free hosted endpoint — 30 requests / IP / hour. No install, no API keys.</span>
-{
+      <ol class="install-steps">
+        <li><span class="step-num">1</span> Download the file above</li>
+        <li><span class="step-num">2</span> Double-click <code>black-book.mcpb</code></li>
+        <li><span class="step-num">3</span> Claude Desktop opens with an install prompt — click <strong>Install</strong></li>
+        <li><span class="step-num">4</span> Try it: <em>"Use the black-book MCP server. Find me a specialist for writing a launch announcement, then load their full prompt."</em></li>
+      </ol>
+
+      <details class="other-installs">
+        <summary><span class="other-installs-arrow">▸</span> Other ways to install</summary>
+        <div class="other-installs-body">
+
+          <div class="other-install">
+            <div class="other-install-head">
+              <strong>One-line terminal install</strong>
+              <span class="other-install-sub">For developers — patches your config in place.</span>
+            </div>
+            <div class="install-tabs" role="tablist">
+              <button class="install-tab active" data-tab="curl" role="tab">macOS / Linux</button>
+              <button class="install-tab" data-tab="ps" role="tab">Windows</button>
+            </div>
+            <div class="code-block" data-pane="curl">
+              <button class="copy" data-copy="curl">Copy</button>
+<pre id="snippet-curl">curl -fsSL https://black-book-host.vercel.app/install | bash</pre>
+            </div>
+            <div class="code-block" data-pane="ps" hidden>
+              <button class="copy" data-copy="ps">Copy</button>
+<pre id="snippet-ps">iwr -useb https://black-book-host.vercel.app/install.ps1 | iex</pre>
+            </div>
+          </div>
+
+          <div class="other-install">
+            <div class="other-install-head">
+              <strong>Manual JSON config</strong>
+              <span class="other-install-sub">Paste into <code>claude_desktop_config.json</code> if you'd rather edit by hand.</span>
+            </div>
+            <div class="code-block">
+              <button class="copy" data-copy="json">Copy</button>
+<pre id="snippet-json">{
   <span class="tok-key">"mcpServers"</span>: {
     <span class="tok-key">"black-book"</span>: {
       <span class="tok-key">"command"</span>: <span class="tok-str">"npx"</span>,
@@ -773,14 +863,21 @@
     }
   }
 }</pre>
-      </div>
+            </div>
+          </div>
 
-      <div class="code-block" data-pane="self" hidden>
-        <button class="copy" data-copy="self">Copy</button>
-<pre id="snippet-self"><span class="tok-com">// Run the MCP server locally — unlimited usage, no rate limit.</span>
-<span class="tok-com">// First clone the repo:</span>
-<span class="tok-com">//   git clone https://github.com/lswank/black-book ~/code/black-book</span>
-<span class="tok-com">//   cd ~/code/black-book/mcp &amp;&amp; npm install</span>
+          <div class="other-install">
+            <div class="other-install-head">
+              <strong>Self-host (unlimited)</strong>
+              <span class="other-install-sub">Run the MCP server locally. No rate limit.</span>
+            </div>
+            <div class="code-block">
+              <button class="copy" data-copy="self">Copy</button>
+<pre id="snippet-self"><span class="tok-com"># Clone, install, and point Claude Desktop at the local file:</span>
+git clone https://github.com/lswank/black-book ~/code/black-book
+cd ~/code/black-book/mcp &amp;&amp; npm install
+
+<span class="tok-com"># Then in claude_desktop_config.json:</span>
 {
   <span class="tok-key">"mcpServers"</span>: {
     <span class="tok-key">"black-book"</span>: {
@@ -789,20 +886,22 @@
     }
   }
 }</pre>
-      </div>
+            </div>
+          </div>
 
-      <div class="code-block" data-pane="claude-code" hidden>
-        <button class="copy" data-copy="claude-code">Copy</button>
-<pre id="snippet-claude-code"><span class="tok-com"># Claude Code plugin — full subagents, skills, and slash commands.</span>
-/plugin install https://github.com/lswank/black-book</pre>
-      </div>
+          <div class="other-install">
+            <div class="other-install-head">
+              <strong>Claude Code (full plugin)</strong>
+              <span class="other-install-sub">Subagents, skills, slash commands — the works.</span>
+            </div>
+            <div class="code-block">
+              <button class="copy" data-copy="claude-code">Copy</button>
+<pre id="snippet-claude-code">/plugin install https://github.com/lswank/black-book</pre>
+            </div>
+          </div>
 
-      <ol class="install-steps">
-        <li><span class="step-num">1</span> Copy the snippet above</li>
-        <li><span class="step-num">2</span> Open <code>claude_desktop_config.json</code> in your editor</li>
-        <li><span class="step-num">3</span> Paste, save, restart Claude Desktop</li>
-        <li><span class="step-num">4</span> Try it: <em>"Use the black-book MCP server. Find me a specialist for writing a launch announcement, then load their full prompt."</em></li>
-      </ol>
+        </div>
+      </details>
     </div>
   </div>
 </section>

@@ -4,24 +4,18 @@ The first 5 minutes after install. Skim this once; you're done after that.
 
 Two install paths — pick one:
 
-## Path 1 — Claude Desktop (hosted, fastest)
+## Path 1 — Claude Desktop (one click)
 
-Paste this into `claude_desktop_config.json` (`~/Library/Application Support/Claude/` on macOS, `%APPDATA%\Claude\` on Windows), then restart Desktop:
-
-```json
-{
-  "mcpServers": {
-    "black-book": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://black-book-host.vercel.app/mcp"]
-    }
-  }
-}
-```
-
-The MCP tools (`list_specialists`, `find_specialist`, `get_specialist`, `prompt_bank`, `flow`, …) are now available. Try:
+1. [Download `black-book.mcpb`](https://black-book-host.vercel.app/black-book.mcpb) (~2.6 KB)
+2. Double-click the file
+3. Claude Desktop opens with an install prompt — click **Install**
+4. Try it:
 
 > "Use the black-book MCP server. Find me a specialist for writing a launch announcement, then load their full prompt."
+
+The MCP tools (`list_specialists`, `find_specialist`, `get_specialist`, `prompt_bank`, `flow`, …) are now available.
+
+Prefer terminal? `curl -fsSL https://black-book-host.vercel.app/install | bash` (macOS/Linux) or `iwr -useb https://black-book-host.vercel.app/install.ps1 | iex` (Windows) does the same thing without opening a config file.
 
 Free tier: 30 requests / IP / hour. For unlimited use, [self-host](https://github.com/lswank/black-book/blob/main/mcp/README.md).
 
