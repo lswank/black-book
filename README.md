@@ -10,6 +10,8 @@ A Claude Code plugin: 85 role-built business specialists, the 9 prompt-engineeri
 A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
 **Landing page:** https://lswank.github.io/black-book/  
+**Quickstart:** [`QUICKSTART.md`](QUICKSTART.md) — first 5 minutes  
+**Examples:** [`EXAMPLES.md`](EXAMPLES.md) — worked walkthroughs of common chains  
 **L-E-D guide:** [`docs/L-E-D.md`](docs/L-E-D.md) — why the calibration framework has no specialist  
 **Contributing:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
 

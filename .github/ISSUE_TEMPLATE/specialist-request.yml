@@ -1,0 +1,76 @@
+name: New specialist request
+description: Suggest a specialist that should exist
+labels: ["specialist-request"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed name (kebab-case)
+      placeholder: "demand-gen-strategist"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      description: |
+        - **Subagent**: produces an artifact (a doc, a draft, a script).
+        - **Skill**: loads a thinking-partner persona into the current chat.
+      options:
+        - subagent
+        - skill
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - marketing
+        - sales
+        - leadership
+        - hr
+        - finance
+        - strategy-ops
+        - content-creative
+        - product-eng
+        - customer-success
+        - new domain (describe in details)
+    validations:
+      required: true
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Suggested framework
+      description: Which intake framework best fits this specialist?
+      options:
+        - T-A-G
+        - B-A-B
+        - R-T-F
+        - C-A-R-E
+        - R-I-S-E
+        - A-I-M
+        - G-R-O
+        - F-I-T
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: One-sentence description
+      description: "Use when ... — precise enough that Claude can match it from a vague request."
+    validations:
+      required: true
+  - type: textarea
+    id: produces
+    attributes:
+      label: What it produces (subagent) or coaches (skill)
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Overlap check
+      description: Which existing specialists does this overlap with, and what makes the proposed one distinct?
+    validations:
+      required: true

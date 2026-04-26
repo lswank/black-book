@@ -21,6 +21,11 @@ Do this:
    - **`okr-cycle`** — Quarterly planning. Chain: `strategy-coach` (skill) → `chief-of-staff-advisor` (skill) → `okr-writer` → `all-hands-talking-points-writer`.
    - **`fundraise`** — A fundraise narrative push. Chain: `fundraise-narrative-coach` (skill) → `vision-memo-writer` → `demo-deck-writer` → `investor-update-writer`.
    - **`content-engine`** — A content production loop. Chain: `content-strategist` (skill) → `blog-post-writer` → `seo-meta-writer` → `social-post-writer` → `newsletter-writer`.
+   - **`prd-loop`** — A product-spec loop. Chain: `product-strategist` (skill) → `prd-writer` → `user-story-writer` → `release-notes-writer` (run when launch is approaching).
+   - **`migration`** — A technical migration with comms. Chain: `engineering-leader-advisor` (skill) → `migration-plan-writer` → `exec-comms-writer` for change-management → `postmortem-writer` after the cutover.
+   - **`qbr-prep`** — Preparing for a customer QBR. Chain: `cs-leader-advisor` (skill) → `customer-health-summary-writer` → `qbr-deck-writer` → `csm-coach` (skill) to debrief the prep.
+   - **`churn-recovery`** — Saving an at-risk account. Chain: `cs-leader-advisor` (skill) → `customer-health-summary-writer` → `churn-save-script-writer` → `customer-apology-writer` if recovery comms are needed.
+   - **`expansion`** — Running an account expansion. Chain: `cs-leader-advisor` (skill) → `expansion-pitch-writer` → `proposal-writer` (when formal documentation is needed).
 
    If the user names one of these scenarios, jump straight to step 3.
 
