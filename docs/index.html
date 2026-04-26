@@ -178,6 +178,33 @@
   .fw[data-fw="fit"]  { --fw-accent: #b66dba; background: linear-gradient(140deg, var(--bg-card), var(--tag-1)); }
   .fw[data-fw="led"]  { --fw-accent: #e25d5d; background: linear-gradient(140deg, var(--bg-card), var(--tag-9)); }
 
+  /* Flow cards */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 12px;
+  }
+  .flow-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: border-color .15s;
+  }
+  .flow-card:hover { border-color: var(--accent); }
+  .flow-name {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--accent);
+    font-size: 0.88rem; margin: 0 0 8px;
+    font-weight: 600;
+  }
+  .flow-chain {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--text-dim);
+    font-size: 0.78rem; line-height: 1.6;
+    margin: 0; word-break: break-word;
+  }
+
   /* Domain navigation */
   .domain-nav {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -282,10 +309,10 @@
     <div class="logo">Black Book<span class="dot">.</span></div>
     <nav>
       <a href="#frameworks">Frameworks</a>
+      <a href="#workflows">Workflows</a>
       <a href="#specialists">Specialists</a>
       <a href="https://github.com/lswank/black-book/blob/main/QUICKSTART.md">Quickstart</a>
-      <a href="https://github.com/lswank/black-book/blob/main/EXAMPLES.md">Examples</a>
-      <a href="L-E-D.html">L-E-D</a>
+      <a href="https://github.com/lswank/black-book/blob/main/FAQ.md">FAQ</a>
       <a href="https://github.com/lswank/black-book">GitHub</a>
     </nav>
   </div>
@@ -389,6 +416,71 @@
       <p class="mono" style="color: var(--accent); margin: 0 0 12px; font-size: 0.92rem;">/prompt-bank linkedin post launching v2 of our SOC 2 product</p>
       <p style="margin: 0; color: var(--text-dim); font-size: 0.95rem;">→ Picks <code>social-post-writer</code>, applies <code>R-T-F</code>, asks for the missing audience and CTA, then emits the finished prompt and offers to run it.</p>
     </div>
+  </div>
+</section>
+
+<section class="block" id="workflows">
+  <div class="container">
+    <p class="section-counter">orchestration</p>
+    <h2>Chain specialists for end-to-end work.</h2>
+    <p class="section-lede"><code>/flow</code> ships with 13 pre-built scenarios. Skills lead with strategy; subagents follow with artifacts; outputs feed forward through the chain.</p>
+
+    <div class="flow-grid">
+      <div class="flow-card">
+        <p class="flow-name">/flow launch</p>
+        <p class="flow-chain">positioning-coach → landing-page-copywriter → seo-meta-writer → social-post-writer → ad-copywriter → press-release-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow hire</p>
+        <p class="flow-chain">talent-strategist → job-description-writer → interview-kit-builder → offer-letter-writer → onboarding-plan-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow board-update</p>
+        <p class="flow-chain">cfo-advisor → board-financial-update-writer → board-update-writer → vision-memo-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow enterprise-deal</p>
+        <p class="flow-chain">enterprise-sales-coach → discovery-call-script-writer → demo-deck-writer → mutual-action-plan-writer → proposal-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow postmortem-loop</p>
+        <p class="flow-chain">crisis-comms-coach → postmortem-writer → exec-comms-writer → decision-memo-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow okr-cycle</p>
+        <p class="flow-chain">strategy-coach → chief-of-staff-advisor → okr-writer → all-hands-talking-points-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow fundraise</p>
+        <p class="flow-chain">fundraise-narrative-coach → vision-memo-writer → demo-deck-writer → investor-update-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow content-engine</p>
+        <p class="flow-chain">content-strategist → blog-post-writer → seo-meta-writer → social-post-writer → newsletter-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow prd-loop</p>
+        <p class="flow-chain">product-strategist → prd-writer → user-story-writer → release-notes-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow migration</p>
+        <p class="flow-chain">engineering-leader-advisor → migration-plan-writer → exec-comms-writer → postmortem-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow qbr-prep</p>
+        <p class="flow-chain">cs-leader-advisor → customer-health-summary-writer → qbr-deck-writer → csm-coach</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow churn-recovery</p>
+        <p class="flow-chain">cs-leader-advisor → customer-health-summary-writer → churn-save-script-writer → customer-apology-writer</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-name">/flow expansion</p>
+        <p class="flow-chain">cs-leader-advisor → expansion-pitch-writer → proposal-writer</p>
+      </div>
+    </div>
+
+    <p style="color: var(--text-faint); font-size: 0.85rem; margin: 24px 0 0;">Or describe a free-form goal — <code>/flow</code> designs the chain on the fly.</p>
   </div>
 </section>
 

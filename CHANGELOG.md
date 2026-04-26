@@ -6,6 +6,19 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.2.2] — 2026-04-26
+
+### Added
+
+- `FAQ.md` — common questions about the plugin, distinction from the original Black Book product, install, contributing, roadmap.
+- `.editorconfig` for consistent contributor editor behavior.
+- A **Workflows** section on the landing page that visually lists all 13 pre-built `/flow` scenarios with their specialist chains. Designed to make orchestration discoverable from the marketing page.
+
+### Changed
+
+- `plugin.json` version → `0.2.2`.
+- Landing-page nav: replaced L-E-D and Examples links with Workflows (anchor) and FAQ to keep the bar uncluttered. (Both still live in the body and in the repo.)
+
 ## [0.2.1] — 2026-04-26
 
 ### Added

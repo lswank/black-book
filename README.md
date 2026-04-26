@@ -12,6 +12,7 @@ A white-room reimplementation of [the "Black Book" concept](https://black-book.d
 **Landing page:** https://lswank.github.io/black-book/  
 **Quickstart:** [`QUICKSTART.md`](QUICKSTART.md) — first 5 minutes  
 **Examples:** [`EXAMPLES.md`](EXAMPLES.md) — worked walkthroughs of common chains  
+**FAQ:** [`FAQ.md`](FAQ.md) — common questions  
 **L-E-D guide:** [`docs/L-E-D.md`](docs/L-E-D.md) — why the calibration framework has no specialist  
 **Contributing:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
