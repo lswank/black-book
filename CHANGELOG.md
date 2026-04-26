@@ -6,6 +6,16 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.2.4] — 2026-04-26
+
+### Added
+
+- Specialist names on the landing page are now links to their source markdown on GitHub. Click any specialist row's name to read the full body (system prompt for subagents, persona script for skills). Pure client-side JS, no build dependency.
+
+### Changed
+
+- `plugin.json` version → `0.2.4`.
+
 ## [0.2.3] — 2026-04-26
 
 ### Added
