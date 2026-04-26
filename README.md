@@ -2,10 +2,10 @@
 
 [![CI](https://github.com/lswank/black-book/actions/workflows/ci.yml/badge.svg)](https://github.com/lswank/black-book/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Specialists](https://img.shields.io/badge/specialists-69-ffd166)](#specialists)
-[![Domains](https://img.shields.io/badge/domains-7-118ab2)](#specialists)
+[![Specialists](https://img.shields.io/badge/specialists-85-ffd166)](#specialists)
+[![Domains](https://img.shields.io/badge/domains-9-118ab2)](#specialists)
 
-A Claude Code plugin: 69 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
+A Claude Code plugin: 85 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
 
 A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
@@ -233,13 +233,53 @@ Each specialist declares its preferred framework in frontmatter.
 | `brand-voice-coach`         | T-A-G     | Voice and tone, voice audits, training    |
 | `creative-director-advisor` | A-I-M     | Campaigns, rebrands, design-system bets   |
 
-`L-E-D` is intentionally not the default for any specialist — it's the calibration framework, best layered on top of one of the others when the same content could be written ten ways and you need to pick one.
+#### Product / Engineering (9)
+
+**Subagents**
+
+| Specialist               | Framework | Produces                                              |
+| ------------------------ | --------- | ----------------------------------------------------- |
+| `prd-writer`             | R-I-S-E   | Product requirements docs / feature specs             |
+| `release-notes-writer`   | F-I-T     | Public + in-app release notes and changelog entries   |
+| `user-story-writer`      | R-T-F     | User stories with testable acceptance criteria        |
+| `api-doc-writer`         | F-I-T     | API / SDK reference, quickstarts, error tables        |
+| `migration-plan-writer`  | R-I-S-E   | Database, infra, framework, vendor migration plans    |
+
+**Skills**
+
+| Specialist                    | Framework | Helps you think through                  |
+| ----------------------------- | --------- | ----------------------------------------- |
+| `product-leader-advisor`      | A-I-M     | VP Product / CPO decisions                |
+| `engineering-leader-advisor`  | A-I-M     | VP Eng / CTO decisions                    |
+| `prioritization-coach`        | T-A-G     | RICE / WSJF / impact-effort prioritization|
+| `product-strategist`          | A-I-M     | Multi-quarter product strategy            |
+
+#### Customer Success (7)
+
+**Subagents**
+
+| Specialist                       | Framework | Produces                                            |
+| -------------------------------- | --------- | --------------------------------------------------- |
+| `qbr-deck-writer`                | C-A-R-E   | QBR decks customers actually engage with            |
+| `customer-health-summary-writer` | F-I-T     | Health summaries for renewal / risk reviews         |
+| `churn-save-script-writer`       | B-A-B     | Save-call scripts with discovery and concession plans|
+| `expansion-pitch-writer`         | R-I-S-E   | Upsell / cross-sell pitches and supporting collateral|
+| `customer-apology-writer`        | B-A-B     | Customer-facing apology and recovery comms          |
+
+**Skills**
+
+| Specialist            | Framework | Helps you think through                  |
+| --------------------- | --------- | ----------------------------------------- |
+| `cs-leader-advisor`   | A-I-M     | CCO / VP CS strategic decisions           |
+| `csm-coach`           | T-A-G     | One-on-one CSM call prep and audits       |
+
+`L-E-D` is intentionally not the default for any specialist — it's the calibration framework, best layered on top of one of the others when the same content could be written ten ways and you need to pick one. See the [`L-E-D` guide](docs/L-E-D.md) for the full reasoning.
 
 ## By the numbers
 
-- 7 domains
-- 69 specialists (44 subagents · 25 skills)
-- 9 framework slash commands + `/prompt-bank`
+- 9 domains
+- 85 specialists (53 subagents · 32 skills)
+- 9 framework slash commands + `/prompt-bank` + `/list` + `/find` + `/flow`
 - 8 frameworks actively in use as specialist defaults
 
 ## Contributing

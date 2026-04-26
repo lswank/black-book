@@ -1,13 +1,15 @@
 {
   "version": 1,
-  "generated_at": "2026-04-26T05:13:36.702Z",
-  "count": 69,
+  "generated_at": "2026-04-26T05:22:37.066Z",
+  "count": 85,
   "domains": [
     "content-creative",
+    "customer-success",
     "finance",
     "hr",
     "leadership",
     "marketing",
+    "product-eng",
     "sales",
     "strategy-ops"
   ],
@@ -37,6 +39,14 @@
       "framework": "R-I-S-E",
       "description": "Use for all-hands meeting talking points, prepared remarks, monthly company-update scripts. Produces what the leader actually says, not the slide deck (use demo-deck-writer for slides).",
       "path": "agents/all-hands-talking-points-writer.md"
+    },
+    {
+      "name": "api-doc-writer",
+      "kind": "subagent",
+      "domain": "product-eng",
+      "framework": "F-I-T",
+      "description": "Use for API and SDK documentation — endpoint references, getting-started guides, authentication docs, error-code tables, webhook docs, SDK quickstarts. Developer-audience. Pair with release-notes-writer for API change announcements.",
+      "path": "agents/api-doc-writer.md"
     },
     {
       "name": "battlecard-writer",
@@ -127,6 +137,14 @@
       "path": "skills/chief-of-staff-advisor.md"
     },
     {
+      "name": "churn-save-script-writer",
+      "kind": "subagent",
+      "domain": "customer-success",
+      "framework": "B-A-B",
+      "description": "Use for churn-save scripts — the conversation script a CSM or success leader uses when a customer signals they're leaving. Produces the script and supporting comms. Pair with cs-leader-advisor for upstream save strategy.",
+      "path": "agents/churn-save-script-writer.md"
+    },
+    {
       "name": "cmo-advisor",
       "kind": "skill",
       "domain": "marketing",
@@ -207,6 +225,38 @@
       "path": "skills/crisis-comms-coach.md"
     },
     {
+      "name": "cs-leader-advisor",
+      "kind": "skill",
+      "domain": "customer-success",
+      "framework": "A-I-M",
+      "description": "Use for VP CS / Chief Customer Officer decisions — CS org design, comp design for CSMs, segmentation, retention strategy, expansion strategy, churn investigation, renewal forecasting. Strategic, not artifact-producing.",
+      "path": "skills/cs-leader-advisor.md"
+    },
+    {
+      "name": "csm-coach",
+      "kind": "skill",
+      "domain": "customer-success",
+      "framework": "T-A-G",
+      "description": "Use for one-on-one CSM coaching — call audits, customer-conversation prep, escalation prep, executive-conversation prep, expansion conversation prep. Strategic, not artifact-producing.",
+      "path": "skills/csm-coach.md"
+    },
+    {
+      "name": "customer-apology-writer",
+      "kind": "subagent",
+      "domain": "customer-success",
+      "framework": "B-A-B",
+      "description": "Use for customer apologies and recovery comms — apologies for outages, billing errors, missed SLAs, support-quality failures, miscommunication, account-team mistakes. Produces the customer-facing message. Pair with crisis-comms-coach for upstream framing.",
+      "path": "agents/customer-apology-writer.md"
+    },
+    {
+      "name": "customer-health-summary-writer",
+      "kind": "subagent",
+      "domain": "customer-success",
+      "framework": "F-I-T",
+      "description": "Use for customer health summaries — the structured writeups CSMs and CS leaders use for renewal forecasting, exec-team reviews, and at-risk-account triage. Produces the analysis, not the customer-facing artifact (use qbr-deck-writer for that).",
+      "path": "agents/customer-health-summary-writer.md"
+    },
+    {
       "name": "decision-memo-writer",
       "kind": "subagent",
       "domain": "strategy-ops",
@@ -247,6 +297,14 @@
       "path": "skills/employee-experience-coach.md"
     },
     {
+      "name": "engineering-leader-advisor",
+      "kind": "skill",
+      "domain": "product-eng",
+      "framework": "A-I-M",
+      "description": "Use for VP Engineering / CTO decisions — engineering org design, build-vs-buy, technical debt strategy, hiring strategy for eng, technical-leadership calls, on-call/reliability investment. Strategic, not artifact-producing.",
+      "path": "skills/engineering-leader-advisor.md"
+    },
+    {
       "name": "enterprise-sales-coach",
       "kind": "skill",
       "domain": "sales",
@@ -269,6 +327,14 @@
       "framework": "R-T-F",
       "description": "Use for short executive communications — Slack announcements, all-hands one-pagers, internal email blasts, leadership email replies, exec social posts. Short-form, voice-of-the-leader. For long-form vision pieces use vision-memo-writer.",
       "path": "agents/exec-comms-writer.md"
+    },
+    {
+      "name": "expansion-pitch-writer",
+      "kind": "subagent",
+      "domain": "customer-success",
+      "framework": "R-I-S-E",
+      "description": "Use for expansion / upsell / cross-sell pitches — the conversation script and supporting collateral when a CSM or AE expands an existing account. Produces the pitch artifact; pair with proposal-writer if formal documentation follows.",
+      "path": "agents/expansion-pitch-writer.md"
     },
     {
       "name": "financial-policy-writer",
@@ -333,6 +399,14 @@
       "framework": "C-A-R-E",
       "description": "Use for landing page copy — full pages or specific sections (hero, features, social proof, FAQ, pricing, footer CTA). Produces copy with section structure, not visual design.",
       "path": "agents/landing-page-copywriter.md"
+    },
+    {
+      "name": "migration-plan-writer",
+      "kind": "subagent",
+      "domain": "product-eng",
+      "framework": "R-I-S-E",
+      "description": "Use for migration plans — database migrations, infrastructure migrations, vendor migrations, framework upgrades, monolith decompositions. Produces the structured plan, not the change-management comms (use exec-comms-writer for that).",
+      "path": "agents/migration-plan-writer.md"
     },
     {
       "name": "mutual-action-plan-writer",
@@ -463,12 +537,28 @@
       "path": "agents/postmortem-writer.md"
     },
     {
+      "name": "prd-writer",
+      "kind": "subagent",
+      "domain": "product-eng",
+      "framework": "R-I-S-E",
+      "description": "Use for product requirements docs (PRDs) — feature specs, product specs, \"what we're building and why\" docs for engineering and design teams. Forward-looking. Pair with decision-memo-writer when a *decision* is the artifact, not a *spec*.",
+      "path": "agents/prd-writer.md"
+    },
+    {
       "name": "press-release-writer",
       "kind": "subagent",
       "domain": "marketing",
       "framework": "F-I-T",
       "description": "Use for press releases — funding announcements, product launches, partnerships, hires, milestones. Produces a wire-ready release plus a journalist-friendly pitch email. Not for blog announcements (use blog-post-writer).",
       "path": "agents/press-release-writer.md"
+    },
+    {
+      "name": "prioritization-coach",
+      "kind": "skill",
+      "domain": "product-eng",
+      "framework": "T-A-G",
+      "description": "Use for prioritization conversations — RICE / WSJF / impact-effort / opportunity-sizing exercises, backlog grooming, \"what should we work on next\" decisions, sprint-planning trade-offs. Operational, not strategic — for strategic prioritization use strategy-coach.",
+      "path": "skills/prioritization-coach.md"
     },
     {
       "name": "process-doc-writer",
@@ -479,12 +569,44 @@
       "path": "agents/process-doc-writer.md"
     },
     {
+      "name": "product-leader-advisor",
+      "kind": "skill",
+      "domain": "product-eng",
+      "framework": "A-I-M",
+      "description": "Use for VP Product / CPO decisions — roadmap design, portfolio prioritization, PM hiring, product-org structure, OKR alignment, product-quality calls, product-strategy bets. Strategic, not artifact-producing.",
+      "path": "skills/product-leader-advisor.md"
+    },
+    {
+      "name": "product-strategist",
+      "kind": "skill",
+      "domain": "product-eng",
+      "framework": "A-I-M",
+      "description": "Use for product strategy — multi-quarter roadmap design, portfolio bets, market-entry products, differentiation strategy, product-led-growth strategy, expansion-product evaluation. Strategic, not artifact-producing — pair with prd-writer for the spec once strategy is clear.",
+      "path": "skills/product-strategist.md"
+    },
+    {
       "name": "proposal-writer",
       "kind": "subagent",
       "domain": "sales",
       "framework": "F-I-T",
       "description": "Use for sales proposals — cover letters, executive summaries, scope-of-work language, pricing presentation, and terms placeholders. For closing-stage deals, not early discovery. Produces the proposal copy, not the contract redlines.",
       "path": "agents/proposal-writer.md"
+    },
+    {
+      "name": "qbr-deck-writer",
+      "kind": "subagent",
+      "domain": "customer-success",
+      "framework": "C-A-R-E",
+      "description": "Use for Quarterly Business Reviews — the deck a CSM brings to a customer's exec sponsor to recap value delivered, surface adoption risks, and tee up next-quarter expansion. Produces deck content; pair with demo-deck-writer if heavy product walkthroughs are needed.",
+      "path": "agents/qbr-deck-writer.md"
+    },
+    {
+      "name": "release-notes-writer",
+      "kind": "subagent",
+      "domain": "product-eng",
+      "framework": "F-I-T",
+      "description": "Use for release notes — public-facing release notes, in-app changelog entries, customer-comms release summaries. Produces user-facing copy. For internal-only changelog entries use the same agent and ask for \"internal\" voice.",
+      "path": "agents/release-notes-writer.md"
     },
     {
       "name": "sales-email-writer",
@@ -549,6 +671,14 @@
       "framework": "A-I-M",
       "description": "Use for talent strategy — hiring plans, sourcing strategy, recruiter capacity, hiring funnel diagnostics, exec search strategy, employer brand. Strategic, not artifact-producing.",
       "path": "skills/talent-strategist.md"
+    },
+    {
+      "name": "user-story-writer",
+      "kind": "subagent",
+      "domain": "product-eng",
+      "framework": "R-T-F",
+      "description": "Use for user stories and acceptance criteria — for sprint planning, ticket grooming, feature breakdown. Produces well-formed stories with acceptance criteria. For full PRDs use prd-writer.",
+      "path": "agents/user-story-writer.md"
     },
     {
       "name": "variance-explainer-writer",

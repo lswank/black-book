@@ -31,6 +31,7 @@ const VALID_FRAMEWORKS = new Set([
 const VALID_DOMAINS = new Set([
   "marketing", "sales", "leadership", "hr",
   "finance", "strategy-ops", "content-creative",
+  "product-eng", "customer-success",
 ]);
 
 function parseFrontmatter(text) {
