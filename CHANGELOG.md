@@ -6,6 +6,18 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-04-26
+
+### Added
+
+- **MCP server for Claude Desktop and other MCP clients.** Lives in `mcp/`. Exposes the catalog as MCP tools — `list_specialists`, `get_specialist`, `find_specialist`, `list_frameworks`, `apply_framework`, `prompt_bank`, `list_flows`, `flow` — plus a `black-book://catalog` resource. Closes the previous gap where Claude Desktop users had no install path.
+- `mcp/README.md` with `claude_desktop_config.json` snippet and persona-takeover-vs-prompt-emit usage patterns.
+- `mcp/package.json` declaring `@modelcontextprotocol/sdk` and `zod` dependencies and a `black-book-mcp` bin entry for future npm publish.
+
+### Changed
+
+- `plugin.json` version → `0.3.0` (minor bump because this adds a new install surface).
+
 ## [0.2.5] — 2026-04-26
 
 ### Added

@@ -1,0 +1,34 @@
+{
+  "name": "black-book-mcp",
+  "version": "0.3.0",
+  "description": "MCP server exposing the Black Book catalog of business AI specialists and prompt-engineering frameworks for use in Claude Desktop and other MCP clients.",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "black-book-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "claude-desktop",
+    "black-book",
+    "ai-specialists",
+    "prompt-engineering"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lswank/black-book",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lswank/black-book.git",
+    "directory": "mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.3.6"
+  }
+}

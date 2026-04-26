@@ -20,6 +20,8 @@ A white-room reimplementation of [the "Black Book" concept](https://black-book.d
 
 ## Install
 
+### Claude Code
+
 ```
 /plugin install https://github.com/lswank/black-book
 ```
@@ -29,6 +31,30 @@ Or clone into your Claude Code plugin directory:
 ```bash
 git clone https://github.com/lswank/black-book ~/.claude/plugins/black-book
 ```
+
+### Claude Desktop (and other MCP clients)
+
+There's an MCP server in [`mcp/`](mcp/) that exposes the same catalog as MCP tools — works in Claude Desktop, Cursor, Codex, and anything else that speaks MCP over stdio.
+
+```bash
+git clone https://github.com/lswank/black-book ~/code/black-book
+cd ~/code/black-book/mcp && npm install
+```
+
+Then add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "black-book": {
+      "command": "node",
+      "args": ["/Users/YOUR_USERNAME/code/black-book/mcp/server.mjs"]
+    }
+  }
+}
+```
+
+Restart Claude Desktop. See [`mcp/README.md`](mcp/README.md) for full details and the available tools.
 
 ## What's in the box
 

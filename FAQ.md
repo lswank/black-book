@@ -73,7 +73,24 @@ Open an issue with the proposed domain and the first 3 specialists before writin
 
 ## Will this work on Claude Desktop?
 
-Not directly. Black Book is a Claude Code plugin — it relies on the subagent and skill primitives that live in Claude Code. The same prompts and frameworks would work pasted into Claude Desktop, but the plugin install path doesn't apply there.
+Yes — via the MCP server in [`mcp/`](mcp/README.md). Claude Desktop natively supports MCP servers, and the Black Book MCP server exposes the same catalog as tools (`list_specialists`, `get_specialist`, `find_specialist`, `prompt_bank`, `flow`, etc.).
+
+Add this to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "black-book": {
+      "command": "node",
+      "args": ["/path/to/black-book/mcp/server.mjs"]
+    }
+  }
+}
+```
+
+Restart Claude Desktop and the tools become available. See [`mcp/README.md`](mcp/README.md) for the full setup.
+
+The Claude Code plugin (subagents + skills + slash commands) doesn't transplant directly because Desktop has no plugin surface — but the MCP server gets you the same specialists and frameworks via persona-takeover or prompt-emit.
 
 ## Will my catalog drift if I edit specialists?
 
