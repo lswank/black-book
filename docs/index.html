@@ -205,6 +205,30 @@
     margin: 0; word-break: break-word;
   }
 
+  /* Search row */
+  .search-row {
+    display: flex; align-items: center; gap: 12px;
+    margin: 0 0 24px;
+    flex-wrap: wrap;
+  }
+  .search-row input {
+    flex: 1; min-width: 280px; max-width: 520px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    transition: border-color .15s;
+  }
+  .search-row input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .search-row input::placeholder { color: var(--text-faint); }
+  .search-count { color: var(--text-faint); font-size: 0.85rem; }
+
   /* Domain navigation */
   .domain-nav {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -490,6 +514,11 @@
     <h2>Specialists, not personas.</h2>
     <p class="section-lede">Two shapes: <code>subagents</code> that produce artifacts, and <code>skills</code> that load a thinking-partner persona into your current chat. Each declares which framework it's built on.</p>
 
+    <div class="search-row">
+      <input id="spec-search" type="search" placeholder="Filter specialists by name, description, or framework…" autocomplete="off" />
+      <span id="spec-search-count" class="search-count" aria-live="polite"></span>
+    </div>
+
     <div class="domain-nav">
       <a href="#d-marketing">Marketing<span class="count">15</span></a>
       <a href="#d-sales">Sales<span class="count">12</span></a>
@@ -767,6 +796,57 @@
           btn.classList.remove("copied");
         }, 1600);
       });
+    });
+  })();
+
+  (function(){
+    var input = document.getElementById("spec-search");
+    var counter = document.getElementById("spec-search-count");
+    if (!input) return;
+
+    var items = Array.prototype.slice.call(document.querySelectorAll(".domain .spec-list li"));
+    var domains = Array.prototype.slice.call(document.querySelectorAll(".domain"));
+    var nav = document.querySelector(".domain-nav");
+    var totalCount = items.length;
+
+    function setCount(text) {
+      if (counter) counter.textContent = text;
+    }
+
+    function applyFilter(query) {
+      query = query.trim().toLowerCase();
+      if (!query) {
+        items.forEach(function(li){ li.style.display = ""; });
+        domains.forEach(function(d){ d.style.display = ""; });
+        if (nav) nav.style.display = "";
+        setCount("");
+        return;
+      }
+      var visible = 0;
+      items.forEach(function(li){
+        var text = li.textContent.toLowerCase();
+        if (text.indexOf(query) !== -1) {
+          li.style.display = "";
+          visible++;
+        } else {
+          li.style.display = "none";
+        }
+      });
+      domains.forEach(function(d){
+        var visibleInDomain = d.querySelectorAll(".spec-list li:not([style*='display: none'])");
+        d.style.display = visibleInDomain.length ? "" : "none";
+      });
+      if (nav) nav.style.display = "none";
+      setCount(visible + " of " + totalCount + " match");
+    }
+
+    input.addEventListener("input", function(){ applyFilter(input.value); });
+    input.addEventListener("search", function(){ applyFilter(input.value); });
+    input.addEventListener("keydown", function(e){
+      if (e.key === "Escape") {
+        input.value = "";
+        applyFilter("");
+      }
     });
   })();
 </script>

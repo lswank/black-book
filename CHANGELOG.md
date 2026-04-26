@@ -6,6 +6,16 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.2.3] — 2026-04-26
+
+### Added
+
+- Live search on the landing page. Filters specialists by name, description, or framework as the user types. Hides empty domain blocks; pressing Escape clears the filter. With 86 specialists across 9 domains, the page is long enough that this is now load-bearing.
+
+### Changed
+
+- `plugin.json` version → `0.2.3`.
+
 ## [0.2.2] — 2026-04-26
 
 ### Added
