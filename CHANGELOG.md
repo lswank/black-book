@@ -6,6 +6,20 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-04-26
+
+### Changed
+
+- **Landing-page rewrite for a non-technical audience.** Audience pivot from "developers who already speak MCP" to "anyone who already uses Claude as a smart assistant at work." The new page leads with three concrete example use cases (the email you've been putting off; the meeting you have to lead; the decision you're stuck on), explains the install in four plain-English numbered steps, and hides the technical content (frameworks, MCP plumbing, workflow chains, search) behind a disclosure or a developers section at the bottom.
+- **Light, warm color scheme** instead of the previous dark theme. Cream background, deep ink text, warm amber accent.
+- **Bigger, more readable type.** 19px base body (was effectively 15–16px). Larger heads, more line-height, more whitespace. Tuned for accessibility — readable at distance, friendly to readers with vision concerns.
+- **Plain language throughout.** "Specialists" → "helpers". "Persona-takeover vs. prompt-emit" → just removed. "MCP server" → mentioned only in the FAQ, not the marketing flow. "Claude Desktop install" → "click the button, double-click the file, click Install."
+- `plugin.json` version → `0.5.0` (minor bump to mark the audience pivot).
+
+### Note
+
+The Claude Code plugin and the underlying MCP server are unchanged. This release is a docs / marketing change. The downloadable `.mcpb`, the hosted endpoint, and all 86 specialist files are identical to v0.4.2.
+
 ## [0.4.2] — 2026-04-26
 
 ### Fixed
