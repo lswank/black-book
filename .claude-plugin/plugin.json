@@ -1,16 +1,23 @@
 {
   "name": "black-book",
-  "version": "0.1.0",
-  "description": "A library of marketing AI specialists, prompt-engineering frameworks, and an on-demand prompt generator for Claude Code. White-room reimplementation of the Black Book concept.",
+  "version": "0.2.0",
+  "description": "85 business AI specialists across 9 domains, 9 prompt-engineering frameworks, and an on-demand prompt generator for Claude Code. White-room reimplementation of the Black Book concept.",
   "author": {
     "name": "Lorenzo Swank",
     "url": "https://github.com/lswank"
   },
-  "homepage": "https://github.com/lswank/black-book",
+  "homepage": "https://lswank.github.io/black-book/",
   "repository": "https://github.com/lswank/black-book",
   "license": "MIT",
   "keywords": [
     "marketing",
+    "sales",
+    "leadership",
+    "hr",
+    "finance",
+    "strategy",
+    "product",
+    "customer-success",
     "prompt-engineering",
     "agents",
     "specialists",

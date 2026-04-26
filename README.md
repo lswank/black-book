@@ -63,15 +63,18 @@ Same surface area as a 1,000-prompt bank; infinite coverage; zero stale entries.
 
 ### Discovery and orchestration
 
-Three plugin commands for finding and chaining specialists:
+Plugin commands for finding, chaining, and verifying specialists:
 
 | Command       | Use for                                                        |
 | ------------- | -------------------------------------------------------------- |
 | `/list`       | Browse the catalog. Optional filter by domain or framework.    |
 | `/find`       | Describe a task; get one or two specialist recommendations.    |
 | `/flow`       | Run a multi-specialist workflow (launch, hire, fundraise, etc.) |
+| `/doctor`     | Print a summary of what's installed; `verbose` for full breakdown. |
 
-Pre-built flows include `launch`, `hire`, `board-update`, `enterprise-deal`, `postmortem-loop`, `okr-cycle`, `fundraise`, and `content-engine`. See [`commands/flow.md`](commands/flow.md) for the chains.
+Pre-built flows include `launch`, `hire`, `board-update`, `enterprise-deal`, `postmortem-loop`, `okr-cycle`, `fundraise`, `content-engine`, `prd-loop`, `migration`, `qbr-prep`, `churn-recovery`, and `expansion`. See [`commands/flow.md`](commands/flow.md) for the chains.
+
+> **Command namespacing.** All commands above are plugin-scoped. Depending on your Claude Code setup and conflicts with other plugins, you may need to invoke them as `/black-book:tag`, `/black-book:flow`, etc. The non-prefixed form works when there's no conflict.
 
 ### Specialists
 
