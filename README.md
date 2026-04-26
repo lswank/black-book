@@ -1,6 +1,6 @@
 # Black Book
 
-A Claude Code plugin: a library of marketing AI specialists, the prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
+A Claude Code plugin: 69 role-built business specialists, the 9 prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand.
 
 A white-room reimplementation of [the "Black Book" concept](https://black-book.dariuslukas.com/) — built independently from the public feature list, sharing none of its code or copy.
 
@@ -52,11 +52,18 @@ Static prompt libraries are a 2023 artifact. Instead, `/prompt-bank <task>` does
 
 Same surface area as a 1,000-prompt bank; infinite coverage; zero stale entries.
 
-### 15 marketing specialists (v1)
+### Specialists
 
-#### Subagents — produce artifacts
+Two shapes:
 
-Invoked via the Agent tool. Each runs in its own context, takes inputs, returns a deliverable.
+- **Subagents** (`agents/`) — invoked via the Agent tool. Each runs in its own context, takes inputs, returns a deliverable.
+- **Skills** (`skills/`) — invoked via the Skill tool. Each loads a thinking-partner persona into your current conversation.
+
+Each specialist declares its preferred framework in frontmatter.
+
+#### Marketing (15)
+
+**Subagents — produce artifacts**
 
 | Specialist                  | Framework | Produces                                      |
 | --------------------------- | --------- | --------------------------------------------- |
@@ -71,9 +78,7 @@ Invoked via the Agent tool. Each runs in its own context, takes inputs, returns 
 | `press-release-writer`      | F-I-T     | Press releases + journalist pitch emails      |
 | `seo-meta-writer`           | F-I-T     | Title tags, meta descriptions, OG, schema     |
 
-#### Skills — consultative thinking partners
-
-Invoked via the Skill tool. Each loads a persona into your current conversation.
+**Skills — consultative thinking partners**
 
 | Specialist               | Framework | Helps you think through                  |
 | ------------------------ | --------- | ---------------------------------------- |
@@ -83,20 +88,140 @@ Invoked via the Skill tool. Each loads a persona into your current conversation.
 | `content-strategist`     | G-R-O     | Calendars, pillars, distribution plans   |
 | `competitive-analyst`    | C-A-R-E   | Teardowns, audits, market mapping        |
 
+#### Sales (12)
+
+**Subagents**
+
+| Specialist                            | Framework | Produces                                              |
+| ------------------------------------- | --------- | ----------------------------------------------------- |
+| `discovery-call-script-writer`        | R-I-S-E   | Discovery-call scripts with question banks            |
+| `demo-deck-writer`                    | C-A-R-E   | Demo decks with slide copy and talk track             |
+| `proposal-writer`                     | F-I-T     | Sales proposals with scope, pricing, terms            |
+| `battlecard-writer`                   | C-A-R-E   | Competitor battlecards for live deals                 |
+| `case-study-writer`                   | C-A-R-E   | Customer case studies for sales surfaces              |
+| `sdr-cadence-builder`                 | R-I-S-E   | Multi-touch outbound cadences                         |
+| `mutual-action-plan-writer`           | G-R-O     | MAPs for complex enterprise deals                     |
+| `objection-handling-playbook-writer`  | B-A-B     | Objection-handling playbooks                          |
+
+**Skills**
+
+| Specialist                | Framework | Helps you think through                          |
+| ------------------------- | --------- | ------------------------------------------------ |
+| `sales-leader-advisor`    | A-I-M     | Sales-leadership decisions, comp, hiring         |
+| `discovery-coach`         | T-A-G     | Discovery quality, qualification, follow-through |
+| `pipeline-strategist`     | A-I-M     | Pipeline coverage, conversion, forecast          |
+| `enterprise-sales-coach`  | R-I-S-E   | Multi-stakeholder enterprise deals               |
+
+#### Leadership (10)
+
+**Subagents**
+
+| Specialist                         | Framework | Produces                                        |
+| ---------------------------------- | --------- | ----------------------------------------------- |
+| `vision-memo-writer`               | C-A-R-E   | Vision and strategy memos                       |
+| `all-hands-talking-points-writer`  | R-I-S-E   | All-hands talking points and prepared remarks   |
+| `board-update-writer`              | F-I-T     | Board / investor updates (prose section)        |
+| `exec-comms-writer`                | R-T-F     | Short-form leadership comms (Slack, email)      |
+| `company-values-writer`            | C-A-R-E   | Company values / operating principles           |
+
+**Skills**
+
+| Specialist             | Framework | Helps you think through                |
+| ---------------------- | --------- | --------------------------------------- |
+| `ceo-advisor`          | A-I-M     | CEO-level strategic decisions           |
+| `coo-advisor`          | A-I-M     | Operating-cadence and execution         |
+| `exec-coach`           | T-A-G     | One-on-one exec coaching                |
+| `org-design-strategist`| A-I-M     | Org structure, reporting lines, layers  |
+| `crisis-comms-coach`   | B-A-B     | Crisis and sensitive comms              |
+
+#### HR / People (10)
+
+**Subagents**
+
+| Specialist                | Framework | Produces                                          |
+| ------------------------- | --------- | ------------------------------------------------- |
+| `job-description-writer`  | C-A-R-E   | Job descriptions / role specs                     |
+| `interview-kit-builder`   | R-I-S-E   | Interview kits with rubrics                       |
+| `perf-review-writer`      | R-I-S-E   | Performance reviews and growth plans              |
+| `onboarding-plan-writer`  | R-I-S-E   | 30/60/90 onboarding plans                         |
+| `offer-letter-writer`     | F-I-T     | Offer letters + candidate-facing summaries        |
+| `people-policy-writer`    | C-A-R-E   | Handbooks, policies, leveling rubrics             |
+
+**Skills**
+
+| Specialist                  | Framework | Helps you think through                  |
+| --------------------------- | --------- | ----------------------------------------- |
+| `people-leader-advisor`     | A-I-M     | CHRO / VP People decisions                |
+| `compensation-strategist`   | A-I-M     | Comp philosophy, banding, equity refresh  |
+| `talent-strategist`         | A-I-M     | Hiring plans, sourcing, recruiter ops     |
+| `employee-experience-coach` | T-A-G     | EX, culture, rituals, engagement          |
+
+#### Finance (8)
+
+**Subagents**
+
+| Specialist                       | Framework | Produces                                      |
+| -------------------------------- | --------- | --------------------------------------------- |
+| `board-financial-update-writer`  | F-I-T     | Board financial section: KPIs, P&L, runway    |
+| `investor-update-writer`         | G-R-O     | Monthly / quarterly investor updates          |
+| `budget-narrative-writer`        | C-A-R-E   | Budget narratives, plan / reforecast prose    |
+| `financial-policy-writer`        | F-I-T     | Expense, T&E, procurement, signing authority  |
+| `variance-explainer-writer`      | F-I-T     | Plan-vs-actual variance writeups              |
+
+**Skills**
+
+| Specialist                  | Framework | Helps you think through                  |
+| --------------------------- | --------- | ----------------------------------------- |
+| `cfo-advisor`               | A-I-M     | CFO-level strategy: fundraise, runway, M&A|
+| `fp-and-a-strategist`       | A-I-M     | Modeling, planning, forecast methodology  |
+| `fundraise-narrative-coach` | B-A-B     | Pitch narrative, why-now, wedge, moat     |
+
+#### Strategy / Ops (8)
+
+**Subagents**
+
+| Specialist                  | Framework | Produces                                              |
+| --------------------------- | --------- | ----------------------------------------------------- |
+| `okr-writer`                | R-I-S-E   | OKRs (company / function / team / individual)         |
+| `postmortem-writer`         | C-A-R-E   | Incident, launch, deal-loss, project postmortems      |
+| `decision-memo-writer`      | G-R-O     | Decision memos / RFCs / six-pagers                    |
+| `operating-cadence-writer`  | R-I-S-E   | Operating-cadence documents                           |
+| `process-doc-writer`        | F-I-T     | Runbooks, playbooks, SOPs                             |
+
+**Skills**
+
+| Specialist                | Framework | Helps you think through                  |
+| ------------------------- | --------- | ----------------------------------------- |
+| `chief-of-staff-advisor`  | A-I-M     | Decision throughput, exec calendar, OKRs  |
+| `operations-strategist`   | A-I-M     | Operating model, bottlenecks, throughput  |
+| `strategy-coach`          | T-A-G     | Where-to-play / how-to-win, market entry  |
+
+#### Content / Creative (6)
+
+**Subagents**
+
+| Specialist                 | Framework | Produces                                        |
+| -------------------------- | --------- | ----------------------------------------------- |
+| `book-outline-writer`      | R-I-S-E   | Book outlines for non-fiction and memoir        |
+| `course-curriculum-writer` | R-I-S-E   | Outcome-driven course curricula                 |
+| `speaker-bio-writer`       | F-I-T     | Speaker / panel / podcast bios in 4 lengths     |
+| `podcast-show-notes-writer`| F-I-T     | Show notes, time stamps, social pull-quotes     |
+
+**Skills**
+
+| Specialist                  | Framework | Helps you think through                  |
+| --------------------------- | --------- | ----------------------------------------- |
+| `brand-voice-coach`         | T-A-G     | Voice and tone, voice audits, training    |
+| `creative-director-advisor` | A-I-M     | Campaigns, rebrands, design-system bets   |
+
 `L-E-D` is intentionally not the default for any specialist — it's the calibration framework, best layered on top of one of the others when the same content could be written ten ways and you need to pick one.
 
-## Roadmap
+## By the numbers
 
-v1 ships the marketing domain. Planned domains:
-
-- **Sales** — discovery scripts, demo decks, objection-handling, win/loss notes
-- **Leadership** — vision memos, all-hands talking points, exec comms
-- **HR / People** — job descriptions, interview kits, perf-review templates
-- **Finance** — board memos, runway models, investor updates
-- **Strategy / Ops** — OKRs, postmortems, decision memos
-- **Content / Creative** — book outlines, course curricula, speaker bios
-
-Each domain ships when v1 has held up under actual use. We're not chasing a count.
+- 7 domains
+- 69 specialists (44 subagents · 25 skills)
+- 9 framework slash commands + `/prompt-bank`
+- 8 frameworks actively in use as specialist defaults
 
 ## Contributing
 

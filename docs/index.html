@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Black Book — marketing AI specialists for Claude Code</title>
-<meta name="description" content="A Claude Code plugin: 15 marketing AI specialists, 9 prompt-engineering frameworks, and an on-demand prompt generator. Free and open source." />
+<title>Black Book — 69 business AI specialists for Claude Code</title>
+<meta name="description" content="A Claude Code plugin: 69 role-built business AI specialists across 7 domains, the 9 prompt-engineering frameworks they're built on, and an on-demand prompt generator. Free and open source." />
 <meta property="og:title" content="Black Book" />
-<meta property="og:description" content="Marketing AI specialists, prompt frameworks, and an on-demand prompt generator for Claude Code." />
+<meta property="og:description" content="69 business AI specialists across marketing, sales, leadership, HR, finance, strategy/ops, and creative — for Claude Code." />
 <meta property="og:url" content="https://lswank.github.io/black-book/" />
 <meta name="twitter:card" content="summary" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,6 +66,7 @@
     font-size: 0.9rem; transition: color .15s;
   }
   nav a:hover { color: var(--text); }
+  @media (max-width: 720px) { nav a { margin-left: 14px; font-size: 0.82rem; } }
 
   /* Hero */
   .hero { padding: 96px 0 72px; }
@@ -83,8 +84,14 @@
   h1 em { font-style: normal; color: var(--accent); }
   .lede {
     font-size: 1.15rem; color: var(--text-dim);
-    max-width: 640px; margin: 0 0 36px;
+    max-width: 660px; margin: 0 0 36px;
   }
+  .stats {
+    display: flex; gap: 28px; flex-wrap: wrap;
+    margin: 0 0 36px;
+  }
+  .stat { font-size: 0.9rem; color: var(--text-dim); }
+  .stat b { color: var(--text); font-size: 1.45rem; display: block; line-height: 1; margin-bottom: 4px; font-weight: 700; }
 
   /* Install block */
   .install {
@@ -120,7 +127,7 @@
     font-weight: 700;
   }
   section.block .section-lede {
-    color: var(--text-dim); max-width: 640px; margin: 0 0 40px;
+    color: var(--text-dim); max-width: 660px; margin: 0 0 40px;
   }
   .section-counter {
     color: var(--text-faint); font-size: 0.78rem; letter-spacing: 0.12em;
@@ -170,76 +177,88 @@
   .fw[data-fw="fit"]  { --fw-accent: #b66dba; background: linear-gradient(140deg, var(--bg-card), var(--tag-1)); }
   .fw[data-fw="led"]  { --fw-accent: #e25d5d; background: linear-gradient(140deg, var(--bg-card), var(--tag-9)); }
 
-  /* Specialists table */
+  /* Domain navigation */
+  .domain-nav {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin: 0 0 32px;
+  }
+  .domain-nav a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 0.85rem; padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .domain-nav a:hover { color: var(--text); border-color: var(--accent); }
+  .domain-nav a .count { color: var(--text-faint); margin-left: 6px; }
+
+  /* Domain section */
+  .domain {
+    margin-bottom: 40px;
+  }
+  .domain h3 {
+    margin: 0 0 6px; font-size: 1.4rem;
+    letter-spacing: -0.01em; font-weight: 600;
+    display: flex; align-items: baseline; gap: 12px;
+  }
+  .domain h3 .domain-count {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--text-faint); font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .domain .domain-desc {
+    color: var(--text-dim); font-size: 0.95rem; margin: 0 0 18px;
+  }
+
   .specialists {
     background: var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
-  .specialists h3 {
-    margin: 0; padding: 18px 22px;
-    font-size: 1.02rem; font-weight: 600;
+  .specialists h4 {
+    margin: 0; padding: 14px 22px;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--text-dim);
     border-bottom: 1px solid var(--border-soft);
     background: var(--bg-card);
+    text-transform: uppercase; letter-spacing: 0.08em;
   }
-  .specialists h3 .pill {
+  .specialists h4 .pill {
     font-family: "JetBrains Mono", monospace;
     font-size: 0.7rem; padding: 2px 8px;
     border-radius: 999px; margin-left: 10px;
-    background: var(--bg); color: var(--text-dim);
+    background: var(--bg); color: var(--text-faint);
     border: 1px solid var(--border); font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em; text-transform: none;
   }
   .spec-list { list-style: none; margin: 0; padding: 0; }
   .spec-list li {
     display: grid;
-    grid-template-columns: 220px 88px 1fr;
+    grid-template-columns: 240px 88px 1fr;
     gap: 16px;
-    padding: 14px 22px;
+    padding: 12px 22px;
     border-bottom: 1px solid var(--border-soft);
     align-items: baseline;
   }
   .spec-list li:last-child { border-bottom: 0; }
   .spec-list .name {
     font-family: "JetBrains Mono", monospace;
-    color: var(--text); font-size: 0.9rem;
+    color: var(--text); font-size: 0.88rem;
   }
   .spec-list .fw-tag {
     font-family: "JetBrains Mono", monospace;
-    font-size: 0.75rem; letter-spacing: 0.08em;
+    font-size: 0.72rem; letter-spacing: 0.08em;
     color: var(--accent); padding: 2px 8px;
     border: 1px solid var(--border); border-radius: 999px;
     text-align: center; justify-self: start;
+    background: rgba(255,209,102,0.05);
   }
-  .spec-list .desc { color: var(--text-dim); font-size: 0.92rem; }
+  .spec-list .desc { color: var(--text-dim); font-size: 0.9rem; }
   @media (max-width: 720px) {
-    .spec-list li { grid-template-columns: 1fr; gap: 6px; }
+    .spec-list li { grid-template-columns: 1fr; gap: 4px; padding: 14px 18px; }
     .spec-list .fw-tag { justify-self: start; }
-  }
-
-  /* Roadmap */
-  .roadmap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-  }
-  .roadmap-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px;
-  }
-  .roadmap-card h4 { margin: 0 0 6px; font-size: 0.95rem; }
-  .roadmap-card p { color: var(--text-dim); font-size: 0.88rem; margin: 0; }
-  .roadmap-card.shipped { border-color: var(--accent-3); }
-  .roadmap-card.shipped h4::after {
-    content: "shipped"; margin-left: 8px;
-    font-size: 0.7rem; padding: 2px 8px; border-radius: 999px;
-    background: rgba(6,214,160,0.12); color: var(--accent-3);
-    font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-    border: 1px solid rgba(6,214,160,0.3);
   }
 
   /* Footer */
@@ -263,7 +282,6 @@
     <nav>
       <a href="#frameworks">Frameworks</a>
       <a href="#specialists">Specialists</a>
-      <a href="#roadmap">Roadmap</a>
       <a href="https://github.com/lswank/black-book">GitHub</a>
     </nav>
   </div>
@@ -274,8 +292,15 @@
 <section class="hero">
   <div class="container">
     <span class="eyebrow">Claude Code plugin</span>
-    <h1>Marketing AI specialists, <em>without the prompt-bank cosplay</em>.</h1>
-    <p class="lede">Fifteen role-built marketing specialists, the nine prompt-engineering frameworks they're built on, and a generator that produces tailored prompts on demand. Free, open source, and installable in one command.</p>
+    <h1>Sixty-nine business specialists, <em>one install</em>.</h1>
+    <p class="lede">A Claude Code plugin spanning marketing, sales, leadership, HR, finance, strategy/ops, and creative — built on the nine prompt-engineering frameworks that show up on every "Claude cheat sheet" and aren't going anywhere. Free, open source, installable in one command.</p>
+
+    <div class="stats">
+      <div class="stat"><b>69</b>specialists</div>
+      <div class="stat"><b>7</b>domains</div>
+      <div class="stat"><b>9</b>frameworks</div>
+      <div class="stat"><b>1</b>install command</div>
+    </div>
 
     <div class="install">
       <code id="install-cmd">/plugin install https://github.com/lswank/black-book</code>
@@ -356,7 +381,7 @@
     <h2>The prompt bank that doesn't go stale.</h2>
     <p class="section-lede">Static prompt libraries are a 2023 artifact — Claude already produces tailored prompts better than a 1,000-prompt PDF.</p>
 
-    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; max-width: 740px;">
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; max-width: 760px;">
       <p class="mono" style="color: var(--accent); margin: 0 0 12px; font-size: 0.92rem;">/prompt-bank linkedin post launching v2 of our SOC 2 product</p>
       <p style="margin: 0; color: var(--text-dim); font-size: 0.95rem;">→ Picks <code>social-post-writer</code>, applies <code>R-T-F</code>, asks for the missing audience and CTA, then emits the finished prompt and offers to run it.</p>
     </div>
@@ -365,75 +390,208 @@
 
 <section class="block" id="specialists">
   <div class="container">
-    <p class="section-counter">15 specialists · v1 marketing</p>
+    <p class="section-counter">69 specialists · 7 domains</p>
     <h2>Specialists, not personas.</h2>
     <p class="section-lede">Two shapes: <code>subagents</code> that produce artifacts, and <code>skills</code> that load a thinking-partner persona into your current chat. Each declares which framework it's built on.</p>
 
-    <div class="specialists">
-      <h3>Subagents <span class="pill">artifact producers</span></h3>
-      <ul class="spec-list">
-        <li><span class="name">sales-email-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Sales emails, sequences, follow-ups, re-engagement.</span></li>
-        <li><span class="name">cold-outreach-copywriter</span><span class="fw-tag">B·A·B</span><span class="desc">First-touch cold email and LinkedIn DMs.</span></li>
-        <li><span class="name">landing-page-copywriter</span><span class="fw-tag">C·A·R·E</span><span class="desc">Full landing pages or specific sections.</span></li>
-        <li><span class="name">ad-copywriter</span><span class="fw-tag">R·T·F</span><span class="desc">Paid ads — Meta, Google, LinkedIn, X, TikTok.</span></li>
-        <li><span class="name">blog-post-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Long-form posts — guides, opinion, comparisons, listicles.</span></li>
-        <li><span class="name">newsletter-writer</span><span class="fw-tag">G·R·O</span><span class="desc">Newsletter editions with subject lines and structure.</span></li>
-        <li><span class="name">social-post-writer</span><span class="fw-tag">R·T·F</span><span class="desc">Organic social — LinkedIn, X, Instagram, Threads.</span></li>
-        <li><span class="name">video-script-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">YouTube, shorts, sales videos, AI-video prompts.</span></li>
-        <li><span class="name">press-release-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Press releases plus journalist pitch emails.</span></li>
-        <li><span class="name">seo-meta-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Title tags, meta descriptions, OG, schema.</span></li>
-      </ul>
+    <div class="domain-nav">
+      <a href="#d-marketing">Marketing<span class="count">15</span></a>
+      <a href="#d-sales">Sales<span class="count">12</span></a>
+      <a href="#d-leadership">Leadership<span class="count">10</span></a>
+      <a href="#d-hr">HR / People<span class="count">10</span></a>
+      <a href="#d-finance">Finance<span class="count">8</span></a>
+      <a href="#d-strategy-ops">Strategy / Ops<span class="count">8</span></a>
+      <a href="#d-content-creative">Content / Creative<span class="count">6</span></a>
     </div>
 
-    <div class="specialists">
-      <h3>Skills <span class="pill">consultative thinking</span></h3>
-      <ul class="spec-list">
-        <li><span class="name">cmo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Strategic marketing decisions — channel mix, brand, OKRs.</span></li>
-        <li><span class="name">growth-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Growth loops, funnels, north-star metrics, experiments.</span></li>
-        <li><span class="name">positioning-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Positioning, messaging, ICP, category, differentiation.</span></li>
-        <li><span class="name">content-strategist</span><span class="fw-tag">G·R·O</span><span class="desc">Calendars, pillars, distribution, repurposing chains.</span></li>
-        <li><span class="name">competitive-analyst</span><span class="fw-tag">C·A·R·E</span><span class="desc">Teardowns, audits, market mapping, win/loss synthesis.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- Marketing -->
+    <div class="domain" id="d-marketing">
+      <h3>Marketing <span class="domain-count">15 specialists · 10 subagents · 5 skills</span></h3>
+      <p class="domain-desc">Copy, content, and strategy specialists for everything from cold email to category positioning.</p>
 
-<section class="block" id="roadmap">
-  <div class="container">
-    <p class="section-counter">roadmap</p>
-    <h2>Marketing first. The rest when v1 holds.</h2>
-    <p class="section-lede">Each domain ships when v1 has held up under actual use. We're not chasing a count.</p>
-
-    <div class="roadmap-grid">
-      <div class="roadmap-card shipped">
-        <h4>Marketing</h4>
-        <p>10 artifact specialists, 5 strategy partners, all 9 frameworks.</p>
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">sales-email-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Sales emails, sequences, follow-ups, re-engagement.</span></li>
+          <li><span class="name">cold-outreach-copywriter</span><span class="fw-tag">B·A·B</span><span class="desc">First-touch cold email and LinkedIn DMs.</span></li>
+          <li><span class="name">landing-page-copywriter</span><span class="fw-tag">C·A·R·E</span><span class="desc">Full landing pages or specific sections.</span></li>
+          <li><span class="name">ad-copywriter</span><span class="fw-tag">R·T·F</span><span class="desc">Paid ads — Meta, Google, LinkedIn, X, TikTok.</span></li>
+          <li><span class="name">blog-post-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Long-form posts — guides, opinion, comparisons, listicles.</span></li>
+          <li><span class="name">newsletter-writer</span><span class="fw-tag">G·R·O</span><span class="desc">Newsletter editions with subject lines and structure.</span></li>
+          <li><span class="name">social-post-writer</span><span class="fw-tag">R·T·F</span><span class="desc">Organic social — LinkedIn, X, Instagram, Threads.</span></li>
+          <li><span class="name">video-script-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">YouTube, shorts, sales videos, AI-video prompts.</span></li>
+          <li><span class="name">press-release-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Press releases plus journalist pitch emails.</span></li>
+          <li><span class="name">seo-meta-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Title tags, meta descriptions, OG, schema.</span></li>
+        </ul>
       </div>
-      <div class="roadmap-card">
-        <h4>Sales</h4>
-        <p>Discovery scripts, demo decks, objection-handling, win/loss notes.</p>
-      </div>
-      <div class="roadmap-card">
-        <h4>Leadership</h4>
-        <p>Vision memos, all-hands talking points, exec comms.</p>
-      </div>
-      <div class="roadmap-card">
-        <h4>HR / People</h4>
-        <p>Job descriptions, interview kits, perf-review templates.</p>
-      </div>
-      <div class="roadmap-card">
-        <h4>Finance</h4>
-        <p>Board memos, runway models, investor updates.</p>
-      </div>
-      <div class="roadmap-card">
-        <h4>Strategy / Ops</h4>
-        <p>OKRs, postmortems, decision memos.</p>
-      </div>
-      <div class="roadmap-card">
-        <h4>Content / Creative</h4>
-        <p>Book outlines, course curricula, speaker bios.</p>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">cmo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Strategic marketing decisions — channel mix, brand, OKRs.</span></li>
+          <li><span class="name">growth-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Growth loops, funnels, north-star metrics, experiments.</span></li>
+          <li><span class="name">positioning-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Positioning, messaging, ICP, category, differentiation.</span></li>
+          <li><span class="name">content-strategist</span><span class="fw-tag">G·R·O</span><span class="desc">Calendars, pillars, distribution, repurposing chains.</span></li>
+          <li><span class="name">competitive-analyst</span><span class="fw-tag">C·A·R·E</span><span class="desc">Teardowns, audits, market mapping, win/loss synthesis.</span></li>
+        </ul>
       </div>
     </div>
+
+    <!-- Sales -->
+    <div class="domain" id="d-sales">
+      <h3>Sales <span class="domain-count">12 specialists · 8 subagents · 4 skills</span></h3>
+      <p class="domain-desc">From discovery scripts to mutual action plans to enterprise-deal coaching — the specialists reps and sales leaders actually reach for.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">discovery-call-script-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Discovery-call scripts with agendas, questions, tee-ups.</span></li>
+          <li><span class="name">demo-deck-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Slide-by-slide demo decks with the talk track.</span></li>
+          <li><span class="name">proposal-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Sales proposals — cover, exec summary, scope, pricing.</span></li>
+          <li><span class="name">battlecard-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Field-ready competitor battlecards with trap-setting questions.</span></li>
+          <li><span class="name">case-study-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Customer case studies for sales decks, sites, proposals.</span></li>
+          <li><span class="name">sdr-cadence-builder</span><span class="fw-tag">R·I·S·E</span><span class="desc">Multi-touch outbound cadences with timing and triggers.</span></li>
+          <li><span class="name">mutual-action-plan-writer</span><span class="fw-tag">G·R·O</span><span class="desc">MAPs for complex enterprise deals.</span></li>
+          <li><span class="name">objection-handling-playbook-writer</span><span class="fw-tag">B·A·B</span><span class="desc">Objection cards with 30-second responses.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">sales-leader-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Comp, hiring, segmentation, forecast pressure-testing.</span></li>
+          <li><span class="name">discovery-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Discovery audits, MEDDIC/SPIN/BANT, follow-through.</span></li>
+          <li><span class="name">pipeline-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Coverage, conversion, velocity, forecast accuracy.</span></li>
+          <li><span class="name">enterprise-sales-coach</span><span class="fw-tag">R·I·S·E</span><span class="desc">Multi-stakeholder deals, procurement, security review.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Leadership -->
+    <div class="domain" id="d-leadership">
+      <h3>Leadership <span class="domain-count">10 specialists · 5 subagents · 5 skills</span></h3>
+      <p class="domain-desc">Comms, vision, and exec-level thinking — for CEOs, COOs, and the chiefs of staff who keep them shipping.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">vision-memo-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Vision and strategy memos for whole-company landings.</span></li>
+          <li><span class="name">all-hands-talking-points-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">All-hands talking points and prepared remarks.</span></li>
+          <li><span class="name">board-update-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Board updates and pre-reads (prose section).</span></li>
+          <li><span class="name">exec-comms-writer</span><span class="fw-tag">R·T·F</span><span class="desc">Slack announcements, leadership emails, exec posts.</span></li>
+          <li><span class="name">company-values-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Values and operating principles you'd be willing to defend.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">ceo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Strategy, fundraising, board, exec hires, pivot calls.</span></li>
+          <li><span class="name">coo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Operating cadence, exec coordination, scaling friction.</span></li>
+          <li><span class="name">exec-coach</span><span class="fw-tag">T·A·G</span><span class="desc">One-on-one coaching for inflection points and hard convos.</span></li>
+          <li><span class="name">org-design-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Reporting lines, span-of-control, exec layers, merges.</span></li>
+          <li><span class="name">crisis-comms-coach</span><span class="fw-tag">B·A·B</span><span class="desc">Outages, incidents, layoffs, sensitive comms.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HR -->
+    <div class="domain" id="d-hr">
+      <h3>HR / People <span class="domain-count">10 specialists · 6 subagents · 4 skills</span></h3>
+      <p class="domain-desc">JDs, interviews, reviews, comp, and the strategic-people work above them — written for orgs that want clarity, not template porn.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">job-description-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">JDs with anti-criteria and outcomes-not-responsibilities.</span></li>
+          <li><span class="name">interview-kit-builder</span><span class="fw-tag">R·I·S·E</span><span class="desc">Structured loops, rubrics, debrief, take-home guidance.</span></li>
+          <li><span class="name">perf-review-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Manager / self / peer reviews and growth plans.</span></li>
+          <li><span class="name">onboarding-plan-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">30/60/90 plans with named intros and first-ship targets.</span></li>
+          <li><span class="name">offer-letter-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Formal letters + plain-English candidate summaries.</span></li>
+          <li><span class="name">people-policy-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Handbooks, conduct, remote, time-off, leveling.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">people-leader-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">CHRO / VP People decisions and culture interventions.</span></li>
+          <li><span class="name">compensation-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Banding, equity refresh, sales comp, geo-pay.</span></li>
+          <li><span class="name">talent-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Hiring plans, sourcing, recruiter capacity, exec search.</span></li>
+          <li><span class="name">employee-experience-coach</span><span class="fw-tag">T·A·G</span><span class="desc">EX, rituals, engagement-survey diagnostics.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Finance -->
+    <div class="domain" id="d-finance">
+      <h3>Finance <span class="domain-count">8 specialists · 5 subagents · 3 skills</span></h3>
+      <p class="domain-desc">Board updates, plans, variance writeups, and the strategic finance work behind them.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">board-financial-update-writer</span><span class="fw-tag">F·I·T</span><span class="desc">KPI summaries, P&amp;L commentary, runway, scenarios.</span></li>
+          <li><span class="name">investor-update-writer</span><span class="fw-tag">G·R·O</span><span class="desc">Monthly / quarterly investor updates with real asks.</span></li>
+          <li><span class="name">budget-narrative-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Budget and reforecast narratives with trade-offs.</span></li>
+          <li><span class="name">financial-policy-writer</span><span class="fw-tag">F·I·T</span><span class="desc">T&amp;E, procurement, signing authority, capex.</span></li>
+          <li><span class="name">variance-explainer-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Plan-vs-actual variance writeups for boards and audit.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">cfo-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Fundraise, runway, plan design, M&amp;A, IPO readiness.</span></li>
+          <li><span class="name">fp-and-a-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Modeling, forecasting, dashboards, finance-data architecture.</span></li>
+          <li><span class="name">fundraise-narrative-coach</span><span class="fw-tag">B·A·B</span><span class="desc">Story arc, why-now, wedge, moat, trajectory framing.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Strategy / Ops -->
+    <div class="domain" id="d-strategy-ops">
+      <h3>Strategy / Ops <span class="domain-count">8 specialists · 5 subagents · 3 skills</span></h3>
+      <p class="domain-desc">OKRs, postmortems, decision memos, operating cadences — and the strategic thinking that decides which to invest in.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">okr-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Objectives + measurable KRs with rationale and confidence.</span></li>
+          <li><span class="name">postmortem-writer</span><span class="fw-tag">C·A·R·E</span><span class="desc">Blameless, action-driven incident / launch / deal postmortems.</span></li>
+          <li><span class="name">decision-memo-writer</span><span class="fw-tag">G·R·O</span><span class="desc">Decision memos / RFCs / six-pagers with trade-offs visible.</span></li>
+          <li><span class="name">operating-cadence-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">The operating-rhythm doc — meetings as forcing functions.</span></li>
+          <li><span class="name">process-doc-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Runbooks, playbooks, SOPs that survive contact with the team.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">chief-of-staff-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Decision throughput, exec calendar, OKR-process design.</span></li>
+          <li><span class="name">operations-strategist</span><span class="fw-tag">A·I·M</span><span class="desc">Operating-model design, bottleneck analysis, throughput.</span></li>
+          <li><span class="name">strategy-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Where-to-play / how-to-win, market entry, "should we?".</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content / Creative -->
+    <div class="domain" id="d-content-creative">
+      <h3>Content / Creative <span class="domain-count">6 specialists · 4 subagents · 2 skills</span></h3>
+      <p class="domain-desc">Books, courses, bios, podcasts — and the brand-voice and creative-direction work behind them.</p>
+
+      <div class="specialists">
+        <h4>Subagents <span class="pill">artifact producers</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">book-outline-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Chapter-level outlines for non-fiction and memoir.</span></li>
+          <li><span class="name">course-curriculum-writer</span><span class="fw-tag">R·I·S·E</span><span class="desc">Outcome-driven curricula with capstones and pacing.</span></li>
+          <li><span class="name">speaker-bio-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Speaker / panel / podcast bios in 4 length variants.</span></li>
+          <li><span class="name">podcast-show-notes-writer</span><span class="fw-tag">F·I·T</span><span class="desc">Show notes, time stamps, social pull-quotes.</span></li>
+        </ul>
+      </div>
+      <div class="specialists">
+        <h4>Skills <span class="pill">consultative thinking</span></h4>
+        <ul class="spec-list">
+          <li><span class="name">brand-voice-coach</span><span class="fw-tag">T·A·G</span><span class="desc">Voice and tone, voice audits, training writers.</span></li>
+          <li><span class="name">creative-director-advisor</span><span class="fw-tag">A·I·M</span><span class="desc">Campaigns, rebrands, design-system bets, agency vs. CD.</span></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 

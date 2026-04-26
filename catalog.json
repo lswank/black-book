@@ -1,9 +1,15 @@
 {
   "version": 1,
-  "generated_at": "2026-04-26T04:45:59.660Z",
-  "count": 15,
+  "generated_at": "2026-04-26T05:07:27.752Z",
+  "count": 69,
   "domains": [
-    "marketing"
+    "content-creative",
+    "finance",
+    "hr",
+    "leadership",
+    "marketing",
+    "sales",
+    "strategy-ops"
   ],
   "frameworks": [
     "A-I-M",
@@ -25,12 +31,100 @@
       "path": "agents/ad-copywriter.md"
     },
     {
+      "name": "all-hands-talking-points-writer",
+      "kind": "subagent",
+      "domain": "leadership",
+      "framework": "R-I-S-E",
+      "description": "Use for all-hands meeting talking points, prepared remarks, monthly company-update scripts. Produces what the leader actually says, not the slide deck (use demo-deck-writer for slides).",
+      "path": "agents/all-hands-talking-points-writer.md"
+    },
+    {
+      "name": "battlecard-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "C-A-R-E",
+      "description": "Use for sales battlecards — competitor-by-competitor or category cards that arm reps in live deals. Produces field-ready cards, not market analyses (use competitive-analyst for analysis).",
+      "path": "agents/battlecard-writer.md"
+    },
+    {
       "name": "blog-post-writer",
       "kind": "subagent",
       "domain": "marketing",
       "framework": "R-I-S-E",
       "description": "Use for long-form blog posts — guides, tutorials, opinion pieces, comparison posts, listicles, case studies. Produces full drafts with H2/H3 structure. Use seo-meta-writer separately for meta tags.",
       "path": "agents/blog-post-writer.md"
+    },
+    {
+      "name": "board-financial-update-writer",
+      "kind": "subagent",
+      "domain": "finance",
+      "framework": "F-I-T",
+      "description": "Use for the financial section of board updates — KPI dashboards, MoM/QoQ/YoY narratives, P&L commentary, runway updates, plan-vs-actual writeups. Produces the financial-section copy and structure. Pair with board-update-writer for the full update.",
+      "path": "agents/board-financial-update-writer.md"
+    },
+    {
+      "name": "board-update-writer",
+      "kind": "subagent",
+      "domain": "leadership",
+      "framework": "F-I-T",
+      "description": "Use for board updates, monthly investor updates, board pre-reads. Produces the prose update; pair with board-financial-update-writer for the financials section.",
+      "path": "agents/board-update-writer.md"
+    },
+    {
+      "name": "book-outline-writer",
+      "kind": "subagent",
+      "domain": "content-creative",
+      "framework": "R-I-S-E",
+      "description": "Use for book outlines — non-fiction business books, memoirs, narrative non-fiction, technical books, how-to / craft books. Produces the chapter-level outline; pair with blog-post-writer for individual chapters at draft time.",
+      "path": "agents/book-outline-writer.md"
+    },
+    {
+      "name": "brand-voice-coach",
+      "kind": "skill",
+      "domain": "content-creative",
+      "framework": "T-A-G",
+      "description": "Use for brand-voice work — voice and tone guidelines, voice audits, voice transitions (post-rebrand, post-leadership-change), copy-review feedback, voice training for new writers. Strategic, not artifact-producing.",
+      "path": "skills/brand-voice-coach.md"
+    },
+    {
+      "name": "budget-narrative-writer",
+      "kind": "subagent",
+      "domain": "finance",
+      "framework": "C-A-R-E",
+      "description": "Use for budget narratives — the prose that accompanies a budget submission, plan, or reforecast. Explains the \"why\" behind the numbers. Produces the narrative; pair with fp-and-a-strategist for the underlying model.",
+      "path": "agents/budget-narrative-writer.md"
+    },
+    {
+      "name": "case-study-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "C-A-R-E",
+      "description": "Use for customer case studies — written for use in sales decks, landing pages, blog, and proposals. Produces the case study artifact; pair with landing-page-copywriter for the page surrounding it.",
+      "path": "agents/case-study-writer.md"
+    },
+    {
+      "name": "ceo-advisor",
+      "kind": "skill",
+      "domain": "leadership",
+      "framework": "A-I-M",
+      "description": "Use when the user wants to think through a CEO-level decision — strategy, fundraising, board management, exec hiring, board composition, M&A, pivot/persevere calls, leadership transitions. Strategic, not artifact-producing.",
+      "path": "skills/ceo-advisor.md"
+    },
+    {
+      "name": "cfo-advisor",
+      "kind": "skill",
+      "domain": "finance",
+      "framework": "A-I-M",
+      "description": "Use for CFO-level decisions — fundraising strategy, runway management, plan design, hiring authorizations, M&A finance, equity strategy, audit/compliance posture, IPO readiness. Strategic, not artifact-producing.",
+      "path": "skills/cfo-advisor.md"
+    },
+    {
+      "name": "chief-of-staff-advisor",
+      "kind": "skill",
+      "domain": "strategy-ops",
+      "framework": "A-I-M",
+      "description": "Use for chief-of-staff thinking — exec-team facilitation, strategic-priority management, OKR-process design, decision throughput, exec calendar architecture, special-project leadership. Strategic, not artifact-producing.",
+      "path": "skills/chief-of-staff-advisor.md"
     },
     {
       "name": "cmo-advisor",
@@ -49,6 +143,22 @@
       "path": "agents/cold-outreach-copywriter.md"
     },
     {
+      "name": "company-values-writer",
+      "kind": "subagent",
+      "domain": "leadership",
+      "framework": "C-A-R-E",
+      "description": "Use for drafting or rewriting company values, operating principles, \"how we work\" docs, leadership principles. Produces the values document. Pair with people-policy-writer for downstream policies.",
+      "path": "agents/company-values-writer.md"
+    },
+    {
+      "name": "compensation-strategist",
+      "kind": "skill",
+      "domain": "hr",
+      "framework": "A-I-M",
+      "description": "Use for comp design — leveling rubrics, banding, equity refresh strategy, sales comp, exec comp, geo-pay, comp philosophy. Strategic, not artifact-producing.",
+      "path": "skills/compensation-strategist.md"
+    },
+    {
       "name": "competitive-analyst",
       "kind": "skill",
       "domain": "marketing",
@@ -65,12 +175,156 @@
       "path": "skills/content-strategist.md"
     },
     {
+      "name": "coo-advisor",
+      "kind": "skill",
+      "domain": "leadership",
+      "framework": "A-I-M",
+      "description": "Use when the user wants COO-level thinking — operating cadence, exec team coordination, cross-functional execution, scaling org structure, removing organizational friction. Strategic, not artifact-producing.",
+      "path": "skills/coo-advisor.md"
+    },
+    {
+      "name": "course-curriculum-writer",
+      "kind": "subagent",
+      "domain": "content-creative",
+      "framework": "R-I-S-E",
+      "description": "Use for course curriculum design — online courses, cohort-based courses, internal training, university/bootcamp curricula. Produces the learning-objective-driven curriculum; pair with video-script-writer for lesson scripts.",
+      "path": "agents/course-curriculum-writer.md"
+    },
+    {
+      "name": "creative-director-advisor",
+      "kind": "skill",
+      "domain": "content-creative",
+      "framework": "A-I-M",
+      "description": "Use for creative-direction questions — campaign direction, design-system strategy, brand-system rebuilds, creative-team operating-model, when to hire a CD vs. an agency. Strategic, not artifact-producing.",
+      "path": "skills/creative-director-advisor.md"
+    },
+    {
+      "name": "crisis-comms-coach",
+      "kind": "skill",
+      "domain": "leadership",
+      "framework": "B-A-B",
+      "description": "Use for crisis and sensitive communications — outages, security incidents, layoffs, leadership departures, public missteps, customer-data issues. Coaches the leader on what to say and how. Pair with exec-comms-writer to produce the message.",
+      "path": "skills/crisis-comms-coach.md"
+    },
+    {
+      "name": "decision-memo-writer",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "G-R-O",
+      "description": "Use for decision memos — structured docs for making and recording decisions (the kind written before a decision is taken, not after). Produces a decision-doc artifact in Amazon-six-pager / RFC / \"decision record\" style.",
+      "path": "agents/decision-memo-writer.md"
+    },
+    {
+      "name": "demo-deck-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "C-A-R-E",
+      "description": "Use for demo decks and demo scripts — slide-by-slide copy and the talk track that goes with it. For sales demos, customer-onboarding demos, partner demos. Produces the deck content, not the visual design.",
+      "path": "agents/demo-deck-writer.md"
+    },
+    {
+      "name": "discovery-call-script-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "R-I-S-E",
+      "description": "Use for sales discovery call scripts — structured agendas, qualifying questions, problem-framing, demo tee-ups, and next-step language. Produces the script, not the strategy.",
+      "path": "agents/discovery-call-script-writer.md"
+    },
+    {
+      "name": "discovery-coach",
+      "kind": "skill",
+      "domain": "sales",
+      "framework": "T-A-G",
+      "description": "Use when the user wants to improve their (or their team's) sales discovery — call audits, question design, qualification frameworks, MEDDIC/SPIN/BANT pressure-testing, follow-up coaching. Strategic, not artifact-producing.",
+      "path": "skills/discovery-coach.md"
+    },
+    {
+      "name": "employee-experience-coach",
+      "kind": "skill",
+      "domain": "hr",
+      "framework": "T-A-G",
+      "description": "Use for employee-experience and culture work — engagement surveys, internal-comms strategy, ritual design (off-sites, all-hands cadence, recognition), retention-driver analysis, manager-development design. Strategic, not artifact-producing.",
+      "path": "skills/employee-experience-coach.md"
+    },
+    {
+      "name": "enterprise-sales-coach",
+      "kind": "skill",
+      "domain": "sales",
+      "framework": "R-I-S-E",
+      "description": "Use for complex enterprise deals — multi-stakeholder deals, RFP responses, procurement navigation, security-review wrangling, executive sponsor strategy. Strategic, not artifact-producing.",
+      "path": "skills/enterprise-sales-coach.md"
+    },
+    {
+      "name": "exec-coach",
+      "kind": "skill",
+      "domain": "leadership",
+      "framework": "T-A-G",
+      "description": "Use for one-on-one executive coaching — career inflection points, leadership style, hard conversations, founder/CEO struggles, peer-relationship issues, team dynamics, imposter moments. Listening-first, not artifact-producing.",
+      "path": "skills/exec-coach.md"
+    },
+    {
+      "name": "exec-comms-writer",
+      "kind": "subagent",
+      "domain": "leadership",
+      "framework": "R-T-F",
+      "description": "Use for short executive communications — Slack announcements, all-hands one-pagers, internal email blasts, leadership email replies, exec social posts. Short-form, voice-of-the-leader. For long-form vision pieces use vision-memo-writer.",
+      "path": "agents/exec-comms-writer.md"
+    },
+    {
+      "name": "financial-policy-writer",
+      "kind": "subagent",
+      "domain": "finance",
+      "framework": "F-I-T",
+      "description": "Use for finance policies — expense policy, T&E, procurement, signing authority, capex approvals, vendor contract policy, revenue recognition, AR/AP cycle policy. Produces the policy artifact, not legal review.",
+      "path": "agents/financial-policy-writer.md"
+    },
+    {
+      "name": "fp-and-a-strategist",
+      "kind": "skill",
+      "domain": "finance",
+      "framework": "A-I-M",
+      "description": "Use for FP&A work — financial modeling, plan design, scenario analysis, forecasting methodology, dashboard design, finance-data architecture. Strategic, not artifact-producing.",
+      "path": "skills/fp-and-a-strategist.md"
+    },
+    {
+      "name": "fundraise-narrative-coach",
+      "kind": "skill",
+      "domain": "finance",
+      "framework": "B-A-B",
+      "description": "Use for shaping fundraise narrative and pitch — the story arc, the why-now, the wedge, the moat, the trajectory framing, the \"ask\" framing. Strategic, not artifact-producing — pair with vision-memo-writer or demo-deck-writer for actual artifacts.",
+      "path": "skills/fundraise-narrative-coach.md"
+    },
+    {
       "name": "growth-strategist",
       "kind": "skill",
       "domain": "marketing",
       "framework": "A-I-M",
       "description": "Use when the user wants to design or audit a growth strategy — funnels, channels, growth loops, activation/retention/referral mechanics, north-star metrics, growth experiments. Strategic, not artifact-producing.",
       "path": "skills/growth-strategist.md"
+    },
+    {
+      "name": "interview-kit-builder",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "R-I-S-E",
+      "description": "Use for interview kits — the full set of interviews, questions, rubrics, and debrief forms for a specific role. Produces the kit; pair with job-description-writer for the JD itself.",
+      "path": "agents/interview-kit-builder.md"
+    },
+    {
+      "name": "investor-update-writer",
+      "kind": "subagent",
+      "domain": "finance",
+      "framework": "G-R-O",
+      "description": "Use for monthly or quarterly investor updates — short, narrative-style updates sent to existing investors and angels. Lighter and warmer than board updates. Produces the email/memo.",
+      "path": "agents/investor-update-writer.md"
+    },
+    {
+      "name": "job-description-writer",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "C-A-R-E",
+      "description": "Use for job descriptions and role specs — full external JDs, internal role specs, leveling rubrics, hiring scorecards. Produces the JD; pair with interview-kit-builder for downstream interview design.",
+      "path": "agents/job-description-writer.md"
     },
     {
       "name": "landing-page-copywriter",
@@ -81,12 +335,116 @@
       "path": "agents/landing-page-copywriter.md"
     },
     {
+      "name": "mutual-action-plan-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "G-R-O",
+      "description": "Use for mutual action plans (MAPs) — joint deal-progression docs the rep and the buyer co-own through procurement. For mid-to-large complex deals. Produces the MAP, not the deal strategy (use sales-leader-advisor for that).",
+      "path": "agents/mutual-action-plan-writer.md"
+    },
+    {
       "name": "newsletter-writer",
       "kind": "subagent",
       "domain": "marketing",
       "framework": "G-R-O",
       "description": "Use for newsletter editions — weekly roundups, founder updates, lifecycle newsletters, customer-facing product updates. Produces full editions, not subscription-funnel copy.",
       "path": "agents/newsletter-writer.md"
+    },
+    {
+      "name": "objection-handling-playbook-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "B-A-B",
+      "description": "Use for objection-handling playbooks — full sets of objection cards reps reference in live conversations. Produces the playbook artifact; for live in-call coaching see sales-leader-advisor.",
+      "path": "agents/objection-handling-playbook-writer.md"
+    },
+    {
+      "name": "offer-letter-writer",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "F-I-T",
+      "description": "Use for offer letters and offer summaries — formal letters, candidate-facing summaries of comp packages, equity explainers, decline-graceful language. Produces the letter, not the comp strategy (use compensation-strategist for that).",
+      "path": "agents/offer-letter-writer.md"
+    },
+    {
+      "name": "okr-writer",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "R-I-S-E",
+      "description": "Use for OKRs — company, function, team, or individual OKRs. Produces well-formed objectives and measurable key results, plus alignment notes. Pair with chief-of-staff-advisor for the upstream OKR strategy.",
+      "path": "agents/okr-writer.md"
+    },
+    {
+      "name": "onboarding-plan-writer",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "R-I-S-E",
+      "description": "Use for onboarding plans — week-by-week plans for new hires (engineers, AEs, execs). Produces structured 30/60/90 plans with milestones, intros, reading lists, and first-output expectations.",
+      "path": "agents/onboarding-plan-writer.md"
+    },
+    {
+      "name": "operating-cadence-writer",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "R-I-S-E",
+      "description": "Use for operating-cadence design — the doc that describes how the company runs (weekly leadership, MBR, QBR, planning cycles). Produces the cadence document. Pair with coo-advisor for the strategy behind the cadence.",
+      "path": "agents/operating-cadence-writer.md"
+    },
+    {
+      "name": "operations-strategist",
+      "kind": "skill",
+      "domain": "strategy-ops",
+      "framework": "A-I-M",
+      "description": "Use for ops strategy — operating-model design, process strategy, cross-functional bottleneck analysis, automation/tooling strategy, organizational throughput diagnostics. Strategic, not artifact-producing.",
+      "path": "skills/operations-strategist.md"
+    },
+    {
+      "name": "org-design-strategist",
+      "kind": "skill",
+      "domain": "leadership",
+      "framework": "A-I-M",
+      "description": "Use for organizational design — reporting lines, team structure, span-of-control, where to centralize vs. decentralize, when to introduce a new exec layer, when to merge functions. Strategic, not artifact-producing.",
+      "path": "skills/org-design-strategist.md"
+    },
+    {
+      "name": "people-leader-advisor",
+      "kind": "skill",
+      "domain": "hr",
+      "framework": "A-I-M",
+      "description": "Use for VP People / CHRO / Head of People decisions — performance issues, leveling/calibration disputes, culture problems, retention, engagement, exec hires, organizational issues. Strategic, not artifact-producing.",
+      "path": "skills/people-leader-advisor.md"
+    },
+    {
+      "name": "people-policy-writer",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "C-A-R-E",
+      "description": "Use for people-policy documents — handbooks, code-of-conduct, remote-work policies, time-off, expense, parental leave, performance, leveling rubrics. Produces the policy artifact, not legal review.",
+      "path": "agents/people-policy-writer.md"
+    },
+    {
+      "name": "perf-review-writer",
+      "kind": "subagent",
+      "domain": "hr",
+      "framework": "R-I-S-E",
+      "description": "Use for performance review writing — manager-side reviews of direct reports, self-reviews, peer feedback, calibration write-ups, growth plans, performance-improvement plans. Produces the written artifact.",
+      "path": "agents/perf-review-writer.md"
+    },
+    {
+      "name": "pipeline-strategist",
+      "kind": "skill",
+      "domain": "sales",
+      "framework": "A-I-M",
+      "description": "Use for pipeline analysis and strategy — pipeline reviews, coverage analysis, conversion-rate diagnostics, stage redesign, forecast pressure-testing, gen-targets math. Strategic, not artifact-producing.",
+      "path": "skills/pipeline-strategist.md"
+    },
+    {
+      "name": "podcast-show-notes-writer",
+      "kind": "subagent",
+      "domain": "content-creative",
+      "framework": "F-I-T",
+      "description": "Use for podcast show notes — episode summaries, time-stamped segments, guest bios, key takeaways, social pull-quotes, related links. Produces show-notes pages and accompanying social copy.",
+      "path": "agents/podcast-show-notes-writer.md"
     },
     {
       "name": "positioning-coach",
@@ -97,6 +455,14 @@
       "path": "skills/positioning-coach.md"
     },
     {
+      "name": "postmortem-writer",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "C-A-R-E",
+      "description": "Use for postmortems — incident postmortems (outages, security incidents), launch postmortems, deal-loss postmortems, project postmortems. Produces blameless, action-driven writeups.",
+      "path": "agents/postmortem-writer.md"
+    },
+    {
       "name": "press-release-writer",
       "kind": "subagent",
       "domain": "marketing",
@@ -105,12 +471,44 @@
       "path": "agents/press-release-writer.md"
     },
     {
+      "name": "process-doc-writer",
+      "kind": "subagent",
+      "domain": "strategy-ops",
+      "framework": "F-I-T",
+      "description": "Use for process documentation — runbooks, playbooks, SOPs, \"how we do X\" docs. For internal-team use, not customer-facing docs. Produces docs people actually follow, not docs that exist for compliance only.",
+      "path": "agents/process-doc-writer.md"
+    },
+    {
+      "name": "proposal-writer",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "F-I-T",
+      "description": "Use for sales proposals — cover letters, executive summaries, scope-of-work language, pricing presentation, and terms placeholders. For closing-stage deals, not early discovery. Produces the proposal copy, not the contract redlines.",
+      "path": "agents/proposal-writer.md"
+    },
+    {
       "name": "sales-email-writer",
       "kind": "subagent",
       "domain": "marketing",
       "framework": "R-I-S-E",
       "description": "Use when the user needs a sales email, sales-email sequence, follow-up email, re-engagement email, or upsell/cross-sell email. Produces ready-to-send copy, not strategy.",
       "path": "agents/sales-email-writer.md"
+    },
+    {
+      "name": "sales-leader-advisor",
+      "kind": "skill",
+      "domain": "sales",
+      "framework": "A-I-M",
+      "description": "Use when the user wants to think through a sales-leadership decision — comp plans, hiring, segmentation, territory design, forecast reviews, deal escalation, sales process changes. Strategic, not artifact-producing.",
+      "path": "skills/sales-leader-advisor.md"
+    },
+    {
+      "name": "sdr-cadence-builder",
+      "kind": "subagent",
+      "domain": "sales",
+      "framework": "R-I-S-E",
+      "description": "Use for outbound prospecting cadences — multi-touch, multi-channel sequences (email + LinkedIn + call + video) for SDRs. Produces full sequences with timing and triggers. Pair with cold-outreach-copywriter for individual messages.",
+      "path": "agents/sdr-cadence-builder.md"
     },
     {
       "name": "seo-meta-writer",
@@ -129,12 +527,52 @@
       "path": "agents/social-post-writer.md"
     },
     {
+      "name": "speaker-bio-writer",
+      "kind": "subagent",
+      "domain": "content-creative",
+      "framework": "F-I-T",
+      "description": "Use for speaker bios, panel intros, podcast guest intros, conference profile copy, \"About the author\" blurbs. Produces multiple length variants. Short-form, voice-of-the-introducer.",
+      "path": "agents/speaker-bio-writer.md"
+    },
+    {
+      "name": "strategy-coach",
+      "kind": "skill",
+      "domain": "strategy-ops",
+      "framework": "T-A-G",
+      "description": "Use for strategic thinking — playing-to-win exercises, where-to-play / how-to-win decisions, market-entry strategy, portfolio strategy, M&A target evaluation, \"should we even do this?\" questions. Strategic, not artifact-producing.",
+      "path": "skills/strategy-coach.md"
+    },
+    {
+      "name": "talent-strategist",
+      "kind": "skill",
+      "domain": "hr",
+      "framework": "A-I-M",
+      "description": "Use for talent strategy — hiring plans, sourcing strategy, recruiter capacity, hiring funnel diagnostics, exec search strategy, employer brand. Strategic, not artifact-producing.",
+      "path": "skills/talent-strategist.md"
+    },
+    {
+      "name": "variance-explainer-writer",
+      "kind": "subagent",
+      "domain": "finance",
+      "framework": "F-I-T",
+      "description": "Use for variance writeups — explaining plan-vs-actual variances, period-over-period swings, MoM/QoQ unusual movements. Produces the explanatory narrative finance teams send to leadership and audit. Concise and surgical.",
+      "path": "agents/variance-explainer-writer.md"
+    },
+    {
       "name": "video-script-writer",
       "kind": "subagent",
       "domain": "marketing",
       "framework": "R-I-S-E",
       "description": "Use for video scripts — YouTube long-form, YouTube Shorts, TikTok, Instagram Reels, sales videos, explainer videos, AI-generated video prompts (Sora, Veo, Runway). Produces a script with shot-level direction.",
       "path": "agents/video-script-writer.md"
+    },
+    {
+      "name": "vision-memo-writer",
+      "kind": "subagent",
+      "domain": "leadership",
+      "framework": "C-A-R-E",
+      "description": "Use for vision memos, strategy memos, mission/vision documents, and \"where we're going\" narrative pieces written for company-wide or board audiences. Produces the memo, not the strategy itself (use ceo-advisor for the underlying thinking).",
+      "path": "agents/vision-memo-writer.md"
     }
   ]
 }
