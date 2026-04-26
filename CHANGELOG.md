@@ -6,6 +6,19 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ## [Unreleased]
 
+## [0.2.5] — 2026-04-26
+
+### Added
+
+- `SECURITY.md` — scope of the project's security surface and reporting channels.
+- `docs/sitemap.xml` and `docs/robots.txt` — basic SEO hygiene for the landing page.
+- Keyboard shortcut: pressing `/` anywhere on the landing page focuses the search box.
+
+### Changed
+
+- `plugin.json` version → `0.2.5`.
+- Search-box placeholder updated to advertise the `/` hotkey.
+
 ## [0.2.4] — 2026-04-26
 
 ### Added

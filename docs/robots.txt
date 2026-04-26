@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lswank.github.io/black-book/sitemap.xml

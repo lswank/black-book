@@ -524,7 +524,7 @@
     <p class="section-lede">Two shapes: <code>subagents</code> that produce artifacts, and <code>skills</code> that load a thinking-partner persona into your current chat. Each declares which framework it's built on.</p>
 
     <div class="search-row">
-      <input id="spec-search" type="search" placeholder="Filter specialists by name, description, or framework…" autocomplete="off" />
+      <input id="spec-search" type="search" placeholder='Filter specialists  (press "/" to focus)' autocomplete="off" />
       <span id="spec-search-count" class="search-count" aria-live="polite"></span>
     </div>
 
@@ -856,6 +856,16 @@
         input.value = "";
         applyFilter("");
       }
+    });
+
+    // "/" anywhere on the page focuses the search box
+    document.addEventListener("keydown", function(e){
+      if (e.key !== "/") return;
+      var t = e.target;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      e.preventDefault();
+      input.focus();
+      input.select();
     });
   })();
 
